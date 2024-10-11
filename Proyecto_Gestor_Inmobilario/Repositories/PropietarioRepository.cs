@@ -10,25 +10,24 @@ namespace Proyecto_Gestor_Inmobilario.Repositories
 {
     internal class PropietarioRepository
     {
-        private List<Propietario> propietarios = new List<Propietario>();
+        private static List<Propietario> propietarios = new List<Propietario>();
 
-        public void Agregar(Propietario propietario)
+        public bool Existe(string codigo)
         {
-            propietario.Propietario_Id = propietarios.Count + 1;  
+            return propietarios.Exists(p => p.DNI == codigo);
+        }
+        public void Registrar(Propietario propietario)
+        {
             propietarios.Add(propietario);
         }
 
-        public void Eliminar(int propietarioId)
+        public void Eliminar(string propietarioId)
         {
-            propietarios.RemoveAll(p => p.Propietario_Id == propietarioId);
+            propietarios.RemoveAll(p => p.Nombre_Usuario == propietarioId);
         }
 
-        public Propietario VerificarCredenciales(string usuario, string contraseña)
-        {
-            return propietarios.FirstOrDefault(p => p.Nombre_Usuario == usuario && p.contraseña == contraseña);
-        }
 
-        public List<Propietario> ObtenerTodos()
+        public static List<Propietario> ListarTodo()
         {
             return propietarios;
         }

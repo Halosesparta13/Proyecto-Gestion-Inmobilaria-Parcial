@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,33 @@ namespace Proyecto_Gestor_Inmobilario
 {
     public partial class FormPropietario : Form
     {
-        private PropietarioRepository propietarioRepository = new PropietarioRepository();
+        private PropietarioService propietarioService = new PropietarioService();
         public FormPropietario()
         {
             InitializeComponent();
-            MostrarPropietarios();
+            MostrarPropietarios(propietarioService.ListarTodo());
+        }
+
+        private void MostrarPropietarios(List<Propietario> propietarios)
+        {
+            dgPropietarios.DataSource = null;
+            if(propietarios.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                dgPropietarios.DataSource = propietarios;
+            }
         }
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
+            if (tbNombreCompleto.Text == "" || tbNombreUsuario.Text == "" || tbDNI.Text == "" || tbCorreo.Text == "" || tbContraseña.Text == "" || tbCelular.Text == "")
+            {
+                MessageBox.Show("Rellene todas las casilas");
+                return;
+            }
+
             Propietario nuevoPropietario = new Propietario()
             {
                 Nombre_Usuario = tbNombreUsuario.Text,
@@ -33,31 +53,30 @@ namespace Proyecto_Gestor_Inmobilario
                 Celular = tbCelular.Text,
             };
 
-            propietarioRepository.Agregar(nuevoPropietario);
+            bool registrar = propietarioService.Registrar(nuevoPropietario);
+            if (!registrar)
+            {
+                MessageBox.Show("No puede haber registros iguales");
+            }
+
             MessageBox.Show("Propietario registrado exitosamente");
             LimpiarCampos();
-            MostrarPropietarios();
+            MostrarPropietarios(propietarioService.ListarTodo());
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (dgPropietarios.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Seleccione un propietario para eliminar");
                 return;
             }
-
-            int propietarioId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-            propietarioRepository.Eliminar(propietarioId);
-            MessageBox.Show("Propietario eliminado exitosamente");
-            MostrarPropietarios();
+            string NombreUsuario = dgPropietarios.SelectedRows[0].Cells[0].Value.ToString();
+            propietarioService.Eliminar(NombreUsuario);
+            MostrarPropietarios(propietarioService.ListarTodo());
         }
 
-        private void MostrarPropietarios()
-        {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = propietarioRepository.ObtenerTodos();
-        }
+        
 
         private void LimpiarCampos()
         {

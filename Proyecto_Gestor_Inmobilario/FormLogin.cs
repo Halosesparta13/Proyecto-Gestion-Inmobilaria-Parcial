@@ -1,63 +1,61 @@
-﻿using Proyecto_Gestor_Inmobilario.Entities;
-using Proyecto_Gestor_Inmobilario.Repositories;
-using Proyecto_Gestor_Inmobilario.Services;
+﻿using Proyecto_Gestor_Inmobilario.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto_Gestor_Inmobilario
 {
     public partial class FormLogin : Form
     {
+        private PropietarioService propietarioService = new PropietarioService();
         public FormLogin()
         {
             InitializeComponent();
         }
-    
 
-
- private void btnIniciarSesion_Click(object sender, EventArgs e)
+        private Dictionary<string, string> usuariosRegistrados = new Dictionary<string, string>()
         {
+            { "admin", "123" },
+            { "user1", "123" },
+            { "user2", "123" },
+        };
+
+        private void btnIniciarSeccion_Click(object sender, EventArgs e)
+        {
+            // Obtener los datos introducidos por el usuario
             string usuario = tbUsuario.Text;
             string contraseña = tbContraseña.Text;
 
-            PropietarioRepository propietarioRepository = new PropietarioRepository();
-            Propietario propietario = propietarioRepository.VerificarCredenciales(usuario, contraseña);
-
-            if (propietario != null)
+            // Verificar si el usuario existe en el diccionario
+            if (usuariosRegistrados.ContainsKey(usuario))
             {
-                MessageBox.Show("Login exitoso");
-                FormPropietario formPropietario = new FormPropietario();
-                formPropietario.Show();
-                this.Hide(); 
+                // Verificar si la contraseña es correcta
+                if (usuariosRegistrados[usuario] == contraseña)
+                {
+                    MessageBox.Show("Inicio de sesión exitoso.");
+                    FormInquilinos form = new FormInquilinos();
+                    form.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta. Inténtalo de nuevo.");
+                }
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                MessageBox.Show("Usuario no encontrado.");
             }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            FormPropietario form = new FormPropietario();
+            form.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit(); 
-        }
-
-        private void btnRegistrate_Click(object sender, EventArgs e)
-        {
-            FormPropietario formPropietario = new FormPropietario();
-            formPropietario.Show();
-            this.Hide(); 
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Hide();
         }
     }
 }
