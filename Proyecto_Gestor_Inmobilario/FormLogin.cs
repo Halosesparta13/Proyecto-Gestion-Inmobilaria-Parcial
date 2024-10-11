@@ -16,8 +16,8 @@ namespace Proyecto_Gestor_Inmobilario
         {
             InitializeComponent();
         }
-    }
-}
+    
+
 
  private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
@@ -49,7 +49,7 @@ namespace Proyecto_Gestor_Inmobilario
         {
             FormPropietario formPropietario = new FormPropietario();
             formPropietario.Show();
-            this.Hide();  
+            this.Hide(); 
         }
     }
 }

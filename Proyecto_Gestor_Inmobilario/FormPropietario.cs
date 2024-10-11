@@ -67,5 +67,3 @@ namespace Proyecto_Gestor_Inmobilario
         }
     }
 }
-    }
-}
