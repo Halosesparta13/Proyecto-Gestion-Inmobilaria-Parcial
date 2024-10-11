@@ -134,5 +134,9 @@
   <ItemGroup>
     <None Include="Resources\pagos.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
