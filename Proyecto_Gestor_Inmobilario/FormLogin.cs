@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Proyecto_Gestor_Inmobilario.Entities;
+using Proyecto_Gestor_Inmobilario.Repositories;
+using Proyecto_Gestor_Inmobilario.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,6 +53,11 @@ namespace Proyecto_Gestor_Inmobilario
             FormPropietario formPropietario = new FormPropietario();
             formPropietario.Show();
             this.Hide(); 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

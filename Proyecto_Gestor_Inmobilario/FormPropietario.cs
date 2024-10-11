@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Proyecto_Gestor_Inmobilario.Entities;
+using Proyecto_Gestor_Inmobilario.Repositories;
+using Proyecto_Gestor_Inmobilario.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,7 +61,7 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void LimpiarCampos()
         {
-            tbNombreUsuario.Clear();
+            tbNombreCompleto.Clear();
             tbNombreCompleto.Clear();
             tbDNI.Clear();
             tbCorreo.Clear();
