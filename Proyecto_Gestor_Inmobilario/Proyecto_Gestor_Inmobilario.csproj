@@ -84,6 +84,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\InmuebleRepository.cs" />
+    <Compile Include="Repositories\PropietarioRepository.cs" />
     <EmbeddedResource Include="FormInmobilario.resx">
       <DependentUpon>FormInmobilario.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,7 +137,6 @@
     <None Include="Resources\pagos.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
