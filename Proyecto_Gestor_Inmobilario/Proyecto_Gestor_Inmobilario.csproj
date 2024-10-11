@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Inmobilario.cs" />
+    <Compile Include="Entities\Propietario.cs" />
     <Compile Include="FormInmobilario.cs">
       <SubType>Form</SubType>
     </Compile>
