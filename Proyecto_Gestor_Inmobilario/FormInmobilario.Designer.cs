@@ -46,9 +46,9 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imagePicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgInmobiliario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -159,6 +159,7 @@
             this.btnCargarImagen.TabIndex = 47;
             this.btnCargarImagen.Text = "Cargar Imagen";
             this.btnCargarImagen.UseVisualStyleBackColor = true;
+            this.btnCargarImagen.Click += new System.EventHandler(this.btnCargarImagen_Click);
             // 
             // cbTipoInmueble
             // 
@@ -204,15 +205,15 @@
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // imagePicture
             // 
-            this.pictureBox1.Image = global::Proyecto_Gestor_Inmobilario.Properties.Resources.inmueble;
-            this.pictureBox1.Location = new System.Drawing.Point(562, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 139);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.imagePicture.Image = global::Proyecto_Gestor_Inmobilario.Properties.Resources.inmueble;
+            this.imagePicture.Location = new System.Drawing.Point(562, 49);
+            this.imagePicture.Name = "imagePicture";
+            this.imagePicture.Size = new System.Drawing.Size(180, 139);
+            this.imagePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagePicture.TabIndex = 38;
+            this.imagePicture.TabStop = false;
             // 
             // FormInmobilario
             // 
@@ -233,7 +234,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbDireccion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imagePicture);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgInmobiliario);
@@ -241,7 +242,7 @@
             this.Name = "FormInmobilario";
             this.Text = "Form Inmobilario";
             ((System.ComponentModel.ISupportInitialize)(this.dgInmobiliario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,7 +254,7 @@
         private System.Windows.Forms.DataGridView dgInmobiliario;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imagePicture;
         private System.Windows.Forms.TextBox tbDireccion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbPagoMensual;

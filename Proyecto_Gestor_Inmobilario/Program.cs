@@ -16,7 +16,7 @@ namespace Proyecto_Gestor_Inmobilario
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new FormInmobilario());
         }
     }
 }

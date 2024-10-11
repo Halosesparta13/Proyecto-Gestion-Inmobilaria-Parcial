@@ -80,6 +80,28 @@ namespace Proyecto_Gestor_Inmobilario
             inmobiliarioService.LimpiarTodo();
             MostrarPropiedades(inmobiliarioService.ListarTodo());
         }
-    
+
+        //Prueba de caraga de imagen
+        private void btnCargarImagen_Click(object sender, EventArgs e)
+        {
+            String imageLocation = "";
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All Files(*.*)|*.*";
+
+                if(dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation= dialog.FileName;
+
+                    imagePicture.ImageLocation = imageLocation;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error en la carga", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
