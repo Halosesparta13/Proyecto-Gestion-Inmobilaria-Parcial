@@ -18,3 +18,38 @@ namespace Proyecto_Gestor_Inmobilario
         }
     }
 }
+
+ private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            string usuario = tbUsuario.Text;
+            string contraseña = tbContraseña.Text;
+
+            PropietarioRepository propietarioRepository = new PropietarioRepository();
+            Propietario propietario = propietarioRepository.VerificarCredenciales(usuario, contraseña);
+
+            if (propietario != null)
+            {
+                MessageBox.Show("Login exitoso");
+                FormPropietario formPropietario = new FormPropietario();
+                formPropietario.Show();
+                this.Hide(); 
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
+        }
+
+        private void btnRegistrate_Click(object sender, EventArgs e)
+        {
+            FormPropietario formPropietario = new FormPropietario();
+            formPropietario.Show();
+            this.Hide();  
+        }
+    }
+}
