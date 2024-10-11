@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dgInmobiliario = new System.Windows.Forms.DataGridView();
+            this.tbNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbDireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbPagoMensual = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbDescripcion = new System.Windows.Forms.TextBox();
+            this.tbAgregado = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnCargarImagen = new System.Windows.Forms.Button();
+            this.cbTipoInmueble = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInmobiliario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,22 +61,22 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "Registro Inmueble";
             // 
-            // dataGridView1
+            // dgInmobiliario
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 266);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(715, 214);
-            this.dataGridView1.TabIndex = 35;
+            this.dgInmobiliario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInmobiliario.Location = new System.Drawing.Point(27, 266);
+            this.dgInmobiliario.Name = "dgInmobiliario";
+            this.dgInmobiliario.RowHeadersWidth = 51;
+            this.dgInmobiliario.RowTemplate.Height = 24;
+            this.dgInmobiliario.Size = new System.Drawing.Size(715, 214);
+            this.dgInmobiliario.TabIndex = 35;
             // 
-            // textBox1
+            // tbNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 22);
-            this.textBox1.TabIndex = 37;
+            this.tbNombre.Location = new System.Drawing.Point(134, 92);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(145, 22);
+            this.tbNombre.TabIndex = 37;
             // 
             // label1
             // 
@@ -87,12 +87,12 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Nombre";
             // 
-            // textBox2
+            // tbDireccion
             // 
-            this.textBox2.Location = new System.Drawing.Point(134, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 22);
-            this.textBox2.TabIndex = 40;
+            this.tbDireccion.Location = new System.Drawing.Point(134, 120);
+            this.tbDireccion.Name = "tbDireccion";
+            this.tbDireccion.Size = new System.Drawing.Size(145, 22);
+            this.tbDireccion.TabIndex = 40;
             // 
             // label2
             // 
@@ -103,12 +103,12 @@
             this.label2.TabIndex = 39;
             this.label2.Text = "Dirección";
             // 
-            // textBox3
+            // tbPagoMensual
             // 
-            this.textBox3.Location = new System.Drawing.Point(134, 148);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 22);
-            this.textBox3.TabIndex = 42;
+            this.tbPagoMensual.Location = new System.Drawing.Point(134, 148);
+            this.tbPagoMensual.Name = "tbPagoMensual";
+            this.tbPagoMensual.Size = new System.Drawing.Size(145, 22);
+            this.tbPagoMensual.TabIndex = 42;
             // 
             // label3
             // 
@@ -128,19 +128,19 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Descripción";
             // 
-            // textBox4
+            // tbDescripcion
             // 
-            this.textBox4.Location = new System.Drawing.Point(379, 120);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(145, 22);
-            this.textBox4.TabIndex = 44;
+            this.tbDescripcion.Location = new System.Drawing.Point(379, 120);
+            this.tbDescripcion.Name = "tbDescripcion";
+            this.tbDescripcion.Size = new System.Drawing.Size(145, 22);
+            this.tbDescripcion.TabIndex = 44;
             // 
-            // textBox5
+            // tbAgregado
             // 
-            this.textBox5.Location = new System.Drawing.Point(379, 148);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(145, 22);
-            this.textBox5.TabIndex = 46;
+            this.tbAgregado.Location = new System.Drawing.Point(379, 148);
+            this.tbAgregado.Name = "tbAgregado";
+            this.tbAgregado.Size = new System.Drawing.Size(145, 22);
+            this.tbAgregado.TabIndex = 46;
             // 
             // label5
             // 
@@ -151,23 +151,23 @@
             this.label5.TabIndex = 45;
             this.label5.Text = "Agregados";
             // 
-            // button1
+            // btnCargarImagen
             // 
-            this.button1.Location = new System.Drawing.Point(579, 212);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 31);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Cargar Imagen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCargarImagen.Location = new System.Drawing.Point(579, 212);
+            this.btnCargarImagen.Name = "btnCargarImagen";
+            this.btnCargarImagen.Size = new System.Drawing.Size(145, 31);
+            this.btnCargarImagen.TabIndex = 47;
+            this.btnCargarImagen.Text = "Cargar Imagen";
+            this.btnCargarImagen.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // cbTipoInmueble
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(294, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 16);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Tiop Inm.";
+            this.cbTipoInmueble.AutoSize = true;
+            this.cbTipoInmueble.Location = new System.Drawing.Point(294, 95);
+            this.cbTipoInmueble.Name = "cbTipoInmueble";
+            this.cbTipoInmueble.Size = new System.Drawing.Size(62, 16);
+            this.cbTipoInmueble.TabIndex = 48;
+            this.cbTipoInmueble.Text = "Tipo Inm.";
             // 
             // comboBox1
             // 
@@ -177,32 +177,32 @@
             this.comboBox1.Size = new System.Drawing.Size(145, 24);
             this.comboBox1.TabIndex = 49;
             // 
-            // button2
+            // btnRegistrar
             // 
-            this.button2.Location = new System.Drawing.Point(27, 212);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 31);
-            this.button2.TabIndex = 50;
-            this.button2.Text = "Registrar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Location = new System.Drawing.Point(27, 212);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(145, 31);
+            this.btnRegistrar.TabIndex = 50;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnEliminar
             // 
-            this.button3.Location = new System.Drawing.Point(190, 212);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 31);
-            this.button3.TabIndex = 51;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(190, 212);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(145, 31);
+            this.btnEliminar.TabIndex = 51;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnLimpiar
             // 
-            this.button4.Location = new System.Drawing.Point(355, 212);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(145, 31);
-            this.button4.TabIndex = 52;
-            this.button4.Text = "Limpiar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(355, 212);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(145, 31);
+            this.btnLimpiar.TabIndex = 52;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -219,28 +219,28 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 492);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.cbTipoInmueble);
+            this.Controls.Add(this.btnCargarImagen);
+            this.Controls.Add(this.tbAgregado);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbDescripcion);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbPagoMensual);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbDireccion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgInmobiliario);
             this.Controls.Add(this.label7);
             this.Name = "FormInmobilario";
             this.Text = "Form Inmobilario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInmobiliario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -250,23 +250,23 @@
         #endregion
 
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dgInmobiliario;
+        private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbDireccion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbPagoMensual;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbDescripcion;
+        private System.Windows.Forms.TextBox tbAgregado;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCargarImagen;
+        private System.Windows.Forms.Label cbTipoInmueble;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

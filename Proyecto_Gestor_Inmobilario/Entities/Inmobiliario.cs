@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Gestor_Inmobilario.Entity
 {
-    internal class Inmobilario
+    internal class Inmobiliario
     {
-        public Inmobilario() { }
+        public Inmobiliario() { }
         public string NombrePropiedad { get; set; }
         public string Ubicación { get; set; }
         public byte Foto { get; set; }
