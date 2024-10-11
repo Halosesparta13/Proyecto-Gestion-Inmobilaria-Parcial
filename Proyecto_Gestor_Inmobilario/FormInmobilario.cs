@@ -76,9 +76,11 @@ namespace Proyecto_Gestor_Inmobilario
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            // Limpiar la lista del servicio
-            inmobiliarioService.LimpiarTodo();
-            MostrarPropiedades(inmobiliarioService.ListarTodo());
+            tbNombre.Clear();
+            tbDireccion.Clear();
+            tbPagoMensual.Clear();
+            tbDescripcion.Clear();
+            tbAgregado.Clear();
         }
 
         //Prueba de caraga de imagen
