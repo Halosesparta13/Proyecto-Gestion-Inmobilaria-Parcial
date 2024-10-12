@@ -142,14 +142,20 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //validar selección
+            // Validar selección
             if (dgInmobiliario.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Seleccione un registro");
                 return;
             }
-            string codigo = dgInmobiliario.SelectedRows[0].Cells[0].ToString();
+
+            // Obtener el código del inmueble desde la celda correcta
+            string codigo = dgInmobiliario.SelectedRows[0].Cells["Inmueble_Id"].Value.ToString();
+
+            // Llamar al servicio para eliminar el inmueble
             inmobiliarioService.Eliminar(codigo);
+
+            // Mostrar la lista actualizada de propiedades
             MostrarPropiedades(inmobiliarioService.ListarTodo());
         }
 
