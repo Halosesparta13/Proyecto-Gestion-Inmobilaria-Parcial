@@ -26,7 +26,7 @@ namespace Proyecto_Gestor_Inmobilario
             this.propietario = propietario;
             this.Monto = Monto;
             lblmonto_Total.Text = $"{Monto}";
-            lblNombre_Usuario.Text = $"¡Bienvenido {propietario.Nombre_Completo}! | Inmueble: {codigoInmueble} |Fecha de último acceso {DateTime.Now}";
+            lblNombre_Usuario.Text = $"¡Bienvenido {propietario.Nombre_Completo}! | Inmueble: {codigoInmueble} | Fecha de último acceso {DateTime.Now}";
         }
 
         private void MostrarInquilinos(List<Inquilino> inquilinoss)
@@ -97,7 +97,6 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
-            
             FormPagos form = new FormPagos();
             form.Show();
         }
