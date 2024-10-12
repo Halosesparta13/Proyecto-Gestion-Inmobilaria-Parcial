@@ -92,9 +92,26 @@ namespace Proyecto_Gestor_Inmobilario
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             //Validación de campos
-            if (tbInmueble_Id.Text == "" || tbDireccion.Text == "" || tbDescripcion.Text == "" || cbTipoInmueble.Text == "" || tbPagoMensual.Text == "" || tbAgregado.Text == "")
+            if (tbInmueble_Id.Text == "" || tbDireccion.Text == "" || tbDescripcion.Text == "" || cbTipo.Text==""|| tbPagoMensual.Text == "" || tbAgregado.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
+                return;
+            }
+            decimal MontoMensual = 0;
+            try
+            {
+                MontoMensual = decimal.Parse(tbPagoMensual.Text);
+                // Verificar si el monto es positivo
+                if (MontoMensual <= 0)
+                {
+                    MessageBox.Show("El Pago Mensual debe ser un valor positivo.");
+                    return;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ingresa un valor valido en la casilla Pago Mensual ");
+                Console.WriteLine(ex.Message);
                 return;
             }
             //Creacion de objetos
@@ -102,9 +119,9 @@ namespace Proyecto_Gestor_Inmobilario
             {
                 Inmueble_Id = tbInmueble_Id.Text,
                 Ubicación = tbDireccion.Text,
-                PagoMensual = int.Parse(tbPagoMensual.Text),
+                PagoMensual = MontoMensual,
                 DescipciónPropiedad = tbDescripcion.Text,
-                TipoInmueble = cbTipoInmueble.Text,
+                TipoInmueble = cbTipo.Text,
                 ServicioAgregados = tbAgregado.Text,
                 ImagePath = imageLocation
             };

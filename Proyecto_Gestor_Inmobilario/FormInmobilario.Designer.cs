@@ -40,7 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnCargarImagen = new System.Windows.Forms.Button();
             this.cbTipoInmueble = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -156,17 +156,17 @@
             this.cbTipoInmueble.TabIndex = 48;
             this.cbTipoInmueble.Text = "Tipo Inm.";
             // 
-            // comboBox1
+            // cbTipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
             "Casa",
             "Departamento",
             "Terreno"});
-            this.comboBox1.Location = new System.Drawing.Point(374, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 24);
-            this.comboBox1.TabIndex = 49;
+            this.cbTipo.Location = new System.Drawing.Point(374, 114);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(145, 24);
+            this.cbTipo.TabIndex = 49;
             // 
             // btnRegistrar
             // 
@@ -255,7 +255,7 @@
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.cbTipoInmueble);
             this.Controls.Add(this.btnCargarImagen);
             this.Controls.Add(this.tbAgregado);
@@ -293,7 +293,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCargarImagen;
         private System.Windows.Forms.Label cbTipoInmueble;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
