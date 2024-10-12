@@ -14,7 +14,7 @@ namespace Proyecto_Gestor_Inmobilario.Services
         //Registrar
         public bool Registrar(Propietario propietario)
         {
-            if (propietarioRepository.Existe(propietario.Nombre_Usuario,propietario.DNI))
+            if (propietarioRepository.Existe(propietario.Nombre_Usuario,propietario.DNI, propietario.RUC))
             {
                 return false;
             }

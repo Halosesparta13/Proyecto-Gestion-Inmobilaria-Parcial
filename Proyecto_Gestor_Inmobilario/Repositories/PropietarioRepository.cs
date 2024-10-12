@@ -12,9 +12,9 @@ namespace Proyecto_Gestor_Inmobilario.Repositories
     {
         private static List<Propietario> propietarios = new List<Propietario>();
 
-        public bool Existe(string NombreUsuario, string DNI)
+        public bool Existe(string NombreUsuario, string DNI, string RUC)
         {
-            return propietarios.Exists(p => p.DNI.Equals(DNI) && p.Nombre_Usuario.Equals(NombreUsuario));
+            return propietarios.Exists(p => p.DNI.Equals(DNI) && p.Nombre_Usuario.Equals(NombreUsuario) && p.RUC.Equals(RUC));
         }
         public void Registrar(Propietario propietario)
         {
