@@ -48,6 +48,7 @@
             this.lbMonto = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.lblNombre_Usuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgInquilinos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -227,11 +228,21 @@
             this.dpFechaFin.Size = new System.Drawing.Size(146, 22);
             this.dpFechaFin.TabIndex = 40;
             // 
+            // lblNombre_Usuario
+            // 
+            this.lblNombre_Usuario.AutoSize = true;
+            this.lblNombre_Usuario.Location = new System.Drawing.Point(53, 417);
+            this.lblNombre_Usuario.Name = "lblNombre_Usuario";
+            this.lblNombre_Usuario.Size = new System.Drawing.Size(110, 16);
+            this.lblNombre_Usuario.TabIndex = 55;
+            this.lblNombre_Usuario.Text = "Nombre_Usuario";
+            // 
             // FormInquilinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 420);
+            this.ClientSize = new System.Drawing.Size(800, 442);
+            this.Controls.Add(this.lblNombre_Usuario);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dpFechaFin);
             this.Controls.Add(this.lbMonto);
@@ -282,5 +293,6 @@
         private System.Windows.Forms.Label lbMonto;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dpFechaFin;
+        private System.Windows.Forms.Label lblNombre_Usuario;
     }
 }

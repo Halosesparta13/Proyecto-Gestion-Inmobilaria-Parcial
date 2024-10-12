@@ -46,11 +46,11 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.imagePicture = new System.Windows.Forms.PictureBox();
+            this.pictureBoxInmobiliario = new System.Windows.Forms.PictureBox();
             this.btnRegistrarInquilinos = new System.Windows.Forms.Button();
             this.lblNombre_Usuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgInmobiliario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInmobiliario)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -192,6 +192,7 @@
             this.btnRegistrar.TabIndex = 50;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnEliminar
             // 
@@ -201,6 +202,7 @@
             this.btnEliminar.TabIndex = 51;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -210,16 +212,17 @@
             this.btnLimpiar.TabIndex = 52;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // imagePicture
+            // pictureBoxInmobiliario
             // 
-            this.imagePicture.Image = global::Proyecto_Gestor_Inmobilario.Properties.Resources.inmueble;
-            this.imagePicture.Location = new System.Drawing.Point(562, 49);
-            this.imagePicture.Name = "imagePicture";
-            this.imagePicture.Size = new System.Drawing.Size(180, 139);
-            this.imagePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imagePicture.TabIndex = 38;
-            this.imagePicture.TabStop = false;
+            this.pictureBoxInmobiliario.Image = global::Proyecto_Gestor_Inmobilario.Properties.Resources.inmueble;
+            this.pictureBoxInmobiliario.Location = new System.Drawing.Point(562, 49);
+            this.pictureBoxInmobiliario.Name = "pictureBoxInmobiliario";
+            this.pictureBoxInmobiliario.Size = new System.Drawing.Size(180, 139);
+            this.pictureBoxInmobiliario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInmobiliario.TabIndex = 38;
+            this.pictureBoxInmobiliario.TabStop = false;
             // 
             // btnRegistrarInquilinos
             // 
@@ -261,7 +264,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbDireccion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.imagePicture);
+            this.Controls.Add(this.pictureBoxInmobiliario);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgInmobiliario);
@@ -269,7 +272,7 @@
             this.Name = "FormInmobilario";
             this.Text = "Form Inmobilario";
             ((System.ComponentModel.ISupportInitialize)(this.dgInmobiliario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInmobiliario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,7 +284,7 @@
         private System.Windows.Forms.DataGridView dgInmobiliario;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox imagePicture;
+        private System.Windows.Forms.PictureBox pictureBoxInmobiliario;
         private System.Windows.Forms.TextBox tbDireccion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbPagoMensual;
