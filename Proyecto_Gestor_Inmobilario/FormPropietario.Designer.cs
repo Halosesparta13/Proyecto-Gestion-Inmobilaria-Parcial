@@ -30,7 +30,7 @@
         {
             this.dgPropietarios = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRegistrarse = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.tbNombreCompleto = new System.Windows.Forms.TextBox();
             this.tbNombreUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,11 +42,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tbCelular = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnRegistrarPropiedad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPropietarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,15 +70,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre Completo";
             // 
-            // btnRegistrarse
+            // btnRegistrar
             // 
-            this.btnRegistrarse.Location = new System.Drawing.Point(23, 268);
-            this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRegistrarse.Name = "btnRegistrarse";
-            this.btnRegistrarse.Size = new System.Drawing.Size(111, 44);
-            this.btnRegistrarse.TabIndex = 2;
-            this.btnRegistrarse.Text = "Registrarse";
-            this.btnRegistrarse.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Location = new System.Drawing.Point(23, 268);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(111, 44);
+            this.btnRegistrar.TabIndex = 2;
+            this.btnRegistrar.Text = "Registrarse";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // tbNombreCompleto
             // 
@@ -173,15 +174,16 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Celular";
             // 
-            // button2
+            // btnLimpiar
             // 
-            this.button2.Location = new System.Drawing.Point(149, 268);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 44);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(149, 268);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(111, 44);
+            this.btnLimpiar.TabIndex = 14;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label7
             // 
@@ -193,15 +195,16 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Registro Propietarios";
             // 
-            // button3
+            // btnSalir
             // 
-            this.button3.Location = new System.Drawing.Point(83, 368);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 44);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Salir";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSalir.Location = new System.Drawing.Point(83, 368);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(111, 44);
+            this.btnSalir.TabIndex = 16;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEliminar
             // 
@@ -212,27 +215,29 @@
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // button5
+            // btnRegistrarPropiedad
             // 
-            this.button5.Location = new System.Drawing.Point(149, 318);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 44);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Registrar Propiedad";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnRegistrarPropiedad.Location = new System.Drawing.Point(149, 318);
+            this.btnRegistrarPropiedad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegistrarPropiedad.Name = "btnRegistrarPropiedad";
+            this.btnRegistrarPropiedad.Size = new System.Drawing.Size(111, 44);
+            this.btnRegistrarPropiedad.TabIndex = 18;
+            this.btnRegistrarPropiedad.Text = "Registrar Propiedad";
+            this.btnRegistrarPropiedad.UseVisualStyleBackColor = true;
+            this.btnRegistrarPropiedad.Click += new System.EventHandler(this.btnRegistrarPropiedad_Click);
             // 
             // FormPropietario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 430);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnRegistrarPropiedad);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbCelular);
             this.Controls.Add(this.label5);
@@ -244,7 +249,7 @@
             this.Controls.Add(this.tbNombreUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbNombreCompleto);
-            this.Controls.Add(this.btnRegistrarse);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgPropietarios);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -260,7 +265,7 @@
 
         private System.Windows.Forms.DataGridView dgPropietarios;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnRegistrarse;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox tbNombreCompleto;
         private System.Windows.Forms.TextBox tbNombreUsuario;
         private System.Windows.Forms.Label label2;
@@ -272,10 +277,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbCelular;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnRegistrarPropiedad;
     }
 }

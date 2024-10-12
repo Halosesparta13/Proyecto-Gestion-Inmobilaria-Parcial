@@ -14,7 +14,7 @@ namespace Proyecto_Gestor_Inmobilario.Entities
         public string Nombre_Completo { get; set; }
         public string DNI { get; set; }
         public string Correo { get; set; }
-        public string contraseña { get; set; }
+        public string Contraseña { get; set; }
         public string Celular { get; set; }
         public string RUC { get; set; }
     }

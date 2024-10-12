@@ -35,7 +35,8 @@ namespace Proyecto_Gestor_Inmobilario
                 dgPropietarios.DataSource = propietarios;
             }
         }
-        private void btnRegistrarse_Click(object sender, EventArgs e)
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (tbNombreCompleto.Text == "" || tbNombreUsuario.Text == "" || tbDNI.Text == "" || tbCorreo.Text == "" || tbContraseña.Text == "" || tbCelular.Text == "")
             {
@@ -49,7 +50,7 @@ namespace Proyecto_Gestor_Inmobilario
                 Nombre_Completo = tbNombreCompleto.Text,
                 DNI = tbDNI.Text,
                 Correo = tbCorreo.Text,
-                contraseña = tbContraseña.Text,
+                Contraseña = tbContraseña.Text,
                 Celular = tbCelular.Text,
             };
 
@@ -58,10 +59,41 @@ namespace Proyecto_Gestor_Inmobilario
             {
                 MessageBox.Show("No puede haber registros iguales");
             }
+            else
+            {
+                // Crear o abrir el archivo usuarios.txt
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "usuarios.txt");
+                // Limpiar el archivo antes de agregar nuevos registros
+                if (File.Exists(path))
+                {
+                    File.WriteAllText(path, string.Empty); // Limpiar el archivo
+                }
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(path, true))
+                    {
+                        writer.WriteLine($"{nuevoPropietario.Nombre_Usuario},{nuevoPropietario.Contraseña}");
+                    }
+                    MessageBox.Show("Propietario registrado exitosamente");
+                    MessageBox.Show($"Archivo se creó en: {path}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al crear el archivo: {ex.Message}");
+                }
 
-            MessageBox.Show("Propietario registrado exitosamente");
-            LimpiarCampos();
-            MostrarPropietarios(propietarioService.ListarTodo());
+                MostrarPropietarios(propietarioService.ListarTodo());
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            tbNombreCompleto.Clear();
+            tbNombreCompleto.Clear();
+            tbDNI.Clear();
+            tbCorreo.Clear();
+            tbContraseña.Clear();
+            tbCelular.Clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -76,16 +108,14 @@ namespace Proyecto_Gestor_Inmobilario
             MostrarPropietarios(propietarioService.ListarTodo());
         }
 
-        
-
-        private void LimpiarCampos()
+        private void btnRegistrarPropiedad_Click(object sender, EventArgs e)
         {
-            tbNombreCompleto.Clear();
-            tbNombreCompleto.Clear();
-            tbDNI.Clear();
-            tbCorreo.Clear();
-            tbContraseña.Clear();
-            tbCelular.Clear();
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
