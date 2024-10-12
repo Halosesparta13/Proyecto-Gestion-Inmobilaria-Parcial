@@ -73,10 +73,6 @@ namespace Proyecto_Gestor_Inmobilario
             tbCorreo.Clear();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -91,6 +87,10 @@ namespace Proyecto_Gestor_Inmobilario
             MostrarInquilinos(inquilinoService.ListarTodo());
         }
 
-        
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
+            FormPagos form = new FormPagos();
+            form.Show();
+        }
     }
 }

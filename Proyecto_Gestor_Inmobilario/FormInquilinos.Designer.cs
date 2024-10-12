@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnPagos = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,15 +61,15 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnSalir
+            // btnPagos
             // 
-            this.btnSalir.Location = new System.Drawing.Point(195, 347);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(111, 46);
-            this.btnSalir.TabIndex = 34;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnPagos.Location = new System.Drawing.Point(195, 347);
+            this.btnPagos.Name = "btnPagos";
+            this.btnPagos.Size = new System.Drawing.Size(111, 46);
+            this.btnPagos.TabIndex = 34;
+            this.btnPagos.Text = "Ver Pagos";
+            this.btnPagos.UseVisualStyleBackColor = true;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // label7
             // 
@@ -239,7 +239,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dpFechaPago);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnPagos);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label6);
@@ -263,7 +263,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnPagos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label6;
