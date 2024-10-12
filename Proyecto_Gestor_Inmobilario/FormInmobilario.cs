@@ -15,10 +15,12 @@ namespace Proyecto_Gestor_Inmobilario
     public partial class FormInmobilario : Form
     {
         private InmobiliarioService inmobiliarioService = new InmobiliarioService();
-        public FormInmobilario()
+        private string Nombre_Usuario;
+        public FormInmobilario(string Nombre_Usuario)
         {
             InitializeComponent();
-
+            this.Nombre_Usuario = Nombre_Usuario;
+            lblNombre_Usuario.Text = $"¡Bienvenido {Nombre_Usuario}! | Fecha de último acceso {DateTime.Now}";
         }
 
         private void MostrarPropiedades(List<Inmobiliario> inmobiliarios)

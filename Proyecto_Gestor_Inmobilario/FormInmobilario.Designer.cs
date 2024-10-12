@@ -48,7 +48,7 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.imagePicture = new System.Windows.Forms.PictureBox();
             this.btnRegistrarInquilinos = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblNombre_Usuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgInmobiliario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePicture)).BeginInit();
             this.SuspendLayout();
@@ -227,21 +227,21 @@
             this.btnRegistrarInquilinos.UseVisualStyleBackColor = true;
             this.btnRegistrarInquilinos.Click += new System.EventHandler(this.btnRegistrarInquilinos_Click);
             // 
-            // label6
+            // lblNombre_Usuario
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 487);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 16);
-            this.label6.TabIndex = 54;
-            this.label6.Text = "label6";
+            this.lblNombre_Usuario.AutoSize = true;
+            this.lblNombre_Usuario.Location = new System.Drawing.Point(27, 487);
+            this.lblNombre_Usuario.Name = "lblNombre_Usuario";
+            this.lblNombre_Usuario.Size = new System.Drawing.Size(110, 16);
+            this.lblNombre_Usuario.TabIndex = 54;
+            this.lblNombre_Usuario.Text = "Nombre_Usuario";
             // 
             // FormInmobilario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 517);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblNombre_Usuario);
             this.Controls.Add(this.btnRegistrarInquilinos);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -293,6 +293,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnRegistrarInquilinos;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblNombre_Usuario;
     }
 }

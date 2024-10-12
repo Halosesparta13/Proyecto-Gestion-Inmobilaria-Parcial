@@ -66,7 +66,7 @@ namespace Proyecto_Gestor_Inmobilario
                 if (usuariosRegistrados[usuario] == contraseña)
                 {
                     MessageBox.Show("Inicio de sesión exitoso.");
-                    FormInmobilario form = new FormInmobilario();
+                    FormInmobilario form = new FormInmobilario(usuario);
                     form.Show();
                 }
                 else
