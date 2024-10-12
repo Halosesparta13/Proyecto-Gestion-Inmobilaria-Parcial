@@ -30,8 +30,6 @@
         {
             this.label7 = new System.Windows.Forms.Label();
             this.dgInmobiliario = new System.Windows.Forms.DataGridView();
-            this.tbNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tbDireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbPagoMensual = new System.Windows.Forms.TextBox();
@@ -74,22 +72,6 @@
             this.dgInmobiliario.RowTemplate.Height = 24;
             this.dgInmobiliario.Size = new System.Drawing.Size(715, 214);
             this.dgInmobiliario.TabIndex = 35;
-            // 
-            // tbNombre
-            // 
-            this.tbNombre.Location = new System.Drawing.Point(129, 116);
-            this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(145, 22);
-            this.tbNombre.TabIndex = 37;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Nombre";
             // 
             // tbDireccion
             // 
@@ -247,7 +229,7 @@
             // 
             // tbInmueble_Id
             // 
-            this.tbInmueble_Id.Location = new System.Drawing.Point(129, 88);
+            this.tbInmueble_Id.Location = new System.Drawing.Point(125, 116);
             this.tbInmueble_Id.Name = "tbInmueble_Id";
             this.tbInmueble_Id.Size = new System.Drawing.Size(145, 22);
             this.tbInmueble_Id.TabIndex = 56;
@@ -255,7 +237,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 91);
+            this.label6.Location = new System.Drawing.Point(29, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 16);
             this.label6.TabIndex = 55;
@@ -285,8 +267,6 @@
             this.Controls.Add(this.tbDireccion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBoxInmobiliario);
-            this.Controls.Add(this.tbNombre);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgInmobiliario);
             this.Controls.Add(this.label7);
             this.Name = "FormInmobilario";
@@ -302,8 +282,6 @@
 
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgInmobiliario;
-        private System.Windows.Forms.TextBox tbNombre;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBoxInmobiliario;
         private System.Windows.Forms.TextBox tbDireccion;
         private System.Windows.Forms.Label label2;

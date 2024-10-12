@@ -10,34 +10,26 @@ namespace Proyecto_Gestor_Inmobilario.Repositories
 {
     internal class InquilinoRepository
     {
-
-
+        private static List<Inquilino> inquilinos = new List<Inquilino>();
         //Existe
-        public bool Existe(string codigoInmueble, string codigoInquilino)
+        public bool Existe(string codigo)
         {
-            List<Inmobiliario> inmobiliarios = InmobiliarioRepository.ListarTodo(codigoInmueble);
-            return inmobiliarios.Exists(i => i.inquilinos.Any(inq => inq.DNI == codigoInquilino));
+            return inquilinos.Exists(i => i.DNI == codigo);
         }
         //Registrar
-        public void Registrar(string codigoInmueble, Inquilino inquilino)
+        public void Registrar(Inquilino inquilino)
         {
-            List<Inmobiliario> inmobiliarios = InmobiliarioRepository.ListarTodo(codigoInmueble);
-            Inmobiliario inmobiliario = inmobiliarios.Find(i => i.Inmueble_Id == codigoInmueble);
-            inmobiliario.inquilinos.Add(inquilino);
+            inquilinos.Add(inquilino);
         }
         //ListarTodo
-        public static List<Inquilino> ListarTodo(string codigoInmueble)
+        public static List<Inquilino> ListarTodo()
         {
-            List<Inmobiliario> inmobiliarios = InmobiliarioRepository.ListarTodo(codigoInmueble);
-            Inmobiliario inmobiliario = inmobiliarios.Find(i => i.Inmueble_Id == codigoInmueble);
-            return inmobiliario.inquilinos;
+            return inquilinos;
         }
         //Eliminar
-        public void Eliminar(string codigoInmueble, string codigoDni)
+        public void Eliminar(string codigo)
         {
-            List<Inmobiliario> inmobiliarios = InmobiliarioRepository.ListarTodo(codigoInmueble);
-            Inmobiliario inmobiliario = inmobiliarios.Find(i => i.Inmueble_Id == codigoInmueble);
-            inmobiliario.inquilinos.RemoveAll(i => i.DNI == codigoDni);
+            inquilinos.RemoveAll(i => i.DNI == codigo);
         }
     }
 }

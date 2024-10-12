@@ -11,27 +11,24 @@ namespace Proyecto_Gestor_Inmobilario.Services
     internal class InquilinoService
     {
         private InquilinoRepository inquilinoRepository = new InquilinoRepository();
-
-        public bool Registrar(string codigoInmueble, Inquilino inquilino)
+        public bool Registrar(Inquilino inquilino)
         {
-            if (inquilinoRepository.Existe(codigoInmueble, inquilino.DNI))
+            if (inquilinoRepository.Existe(inquilino.DNI))
             {
                 return false;
             }
             {
-                inquilinoRepository.Registrar(codigoInmueble, inquilino);
+                inquilinoRepository.Registrar(inquilino);
                 return true;
             }
         }
-
-        public List<Inquilino> ListarTodo(string codigoInmueble)
+        public List<Inquilino> ListarTodo()
         {
-            return InquilinoRepository.ListarTodo(codigoInmueble);
+            return InquilinoRepository.ListarTodo();
         }
-
-        public void Eliminar(string codigoInmueble, string CodigoInquilino)
+        public void Eliminar(string codigo)
         {
-            inquilinoRepository.Eliminar(codigoInmueble, CodigoInquilino);
+            inquilinoRepository.Eliminar(codigo);
         }
 
     }

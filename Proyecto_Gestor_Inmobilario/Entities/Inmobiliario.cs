@@ -10,7 +10,6 @@ namespace Proyecto_Gestor_Inmobilario.Entity
     {
         public Inmobiliario() { }
         public string Inmueble_Id { get; set; }
-        public string NombrePropiedad { get; set; }
         public string Ubicación { get; set; }
         public decimal PagoMensual { get; set; }
         public string DescipciónPropiedad { get; set; }

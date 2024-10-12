@@ -1,5 +1,4 @@
-﻿using Proyecto_Gestor_Inmobilario.Entities;
-using Proyecto_Gestor_Inmobilario.Entity;
+﻿using Proyecto_Gestor_Inmobilario.Entity;
 using Proyecto_Gestor_Inmobilario.Services;
 using System;
 using System.Collections.Generic;
@@ -16,7 +15,7 @@ namespace Proyecto_Gestor_Inmobilario
     public partial class FormInmobilario : Form
     {
         private InmobiliarioService inmobiliarioService = new InmobiliarioService();
-        string Nombre_Usuario;
+        private string Nombre_Usuario;
         public FormInmobilario(string Nombre_Usuario)
         {
             InitializeComponent();
@@ -39,7 +38,6 @@ namespace Proyecto_Gestor_Inmobilario
             }
 
         }
-
         private void dgInmobiliario_SelectionChanged(object sender, EventArgs e)
         {
             if (dgInmobiliario.SelectedRows.Count > 0)
@@ -70,15 +68,15 @@ namespace Proyecto_Gestor_Inmobilario
         private String imageLocation = "";
         private void btnCargarImagen_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
                 dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All Files(*.*)|*.*";
 
-                if(dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    imageLocation= dialog.FileName;
+                    imageLocation = dialog.FileName;
 
                     pictureBoxInmobiliario.ImageLocation = imageLocation;
 
@@ -94,7 +92,7 @@ namespace Proyecto_Gestor_Inmobilario
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             //Validación de campos
-            if (tbInmueble_Id.Text ==""|| tbNombre.Text == "" || tbDireccion.Text == "" || tbDescripcion.Text == "" || cbTipoInmueble.Text == "" || tbPagoMensual.Text == "" || tbAgregado.Text == "")
+            if (tbInmueble_Id.Text == "" || tbDireccion.Text == "" || tbDescripcion.Text == "" || cbTipoInmueble.Text == "" || tbPagoMensual.Text == "" || tbAgregado.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
@@ -103,28 +101,26 @@ namespace Proyecto_Gestor_Inmobilario
             Inmobiliario inmobiliario = new Inmobiliario()
             {
                 Inmueble_Id = tbInmueble_Id.Text,
-                NombrePropiedad = tbNombre.Text,
                 Ubicación = tbDireccion.Text,
-                PagoMensual = decimal.Parse(tbPagoMensual.Text),
+                PagoMensual = int.Parse(tbPagoMensual.Text),
                 DescipciónPropiedad = tbDescripcion.Text,
                 TipoInmueble = cbTipoInmueble.Text,
                 ServicioAgregados = tbAgregado.Text,
-                ImagePath = imageLocation,
-                inquilinos = new List<Inquilino>()
+                ImagePath = imageLocation
             };
             //No se repite
-            bool registrado = inmobiliarioService.Registrar(Nombre_Usuario, inmobiliario);
+            bool registrado = inmobiliarioService.Registrar(inmobiliario);
             if (!registrado)
             {
                 MessageBox.Show("Debe de ingresar un registro diferente");
                 return;
             }
             //Mostrar
-            MostrarPropiedades(inmobiliarioService.ListarTodo(Nombre_Usuario));
+            MostrarPropiedades(inmobiliarioService.ListarTodo());
         }
         private void btnRegistrarInquilinos_Click(object sender, EventArgs e)
         {
-            if(dgInmobiliario.SelectedRows.Count == 0)
+            if (dgInmobiliario.SelectedRows.Count == 0)
             {
                 MessageBox.Show("¡Seleccione un registro!");
                 return;
@@ -137,7 +133,7 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            tbNombre.Clear();
+            tbInmueble_Id.Clear();
             tbDireccion.Clear();
             tbPagoMensual.Clear();
             tbDescripcion.Clear();
@@ -146,28 +142,17 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            // Validar selección
+            //validar selección
             if (dgInmobiliario.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Seleccione un registro");
                 return;
             }
-
-            string codigo = dgInmobiliario.SelectedRows[0].Cells["Inmueble_Id"].Value.ToString(); // Cambia esto si el nombre de la columna es diferente
-
-            // Llamar al método de eliminación
-            try
-            {
-                inmobiliarioService.Eliminar(Nombre_Usuario, codigo);
-                MostrarPropiedades(inmobiliarioService.ListarTodo(Nombre_Usuario));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message); // Muestra el mensaje de error en caso de que algo falle
-            }
+            string codigo = dgInmobiliario.SelectedRows[0].Cells[0].ToString();
+            inmobiliarioService.Eliminar(codigo);
+            MostrarPropiedades(inmobiliarioService.ListarTodo());
         }
-    }
 
-        
-    
+
+    }
 }

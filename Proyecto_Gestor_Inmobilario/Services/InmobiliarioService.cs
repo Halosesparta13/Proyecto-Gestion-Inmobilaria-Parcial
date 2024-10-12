@@ -12,7 +12,7 @@ namespace Proyecto_Gestor_Inmobilario.Services
     {
         private InmobiliarioRepository inmobiliarioRepository = new InmobiliarioRepository();
         //Registrar
-        public bool Registrar(string nombrePropietario, Inmobiliario inmobiliario)
+        public bool Registrar(Inmobiliario inmobiliario)
         {
             if (inmobiliarioRepository.Existe(inmobiliario.Inmueble_Id))
             {
@@ -20,19 +20,23 @@ namespace Proyecto_Gestor_Inmobilario.Services
             }
             else
             {
-                inmobiliarioRepository.Registrar(nombrePropietario, inmobiliario);
+                inmobiliarioRepository.Registrar(inmobiliario);
                 return true;
             }
         }
         //Eliminar
-        public void Eliminar(string codigoPropietario, string codigoInmueble)
+        public void Eliminar(string codigo)
         {
-            inmobiliarioRepository.Eliminar(codigoPropietario, codigoInmueble);
+            inmobiliarioRepository.Eliminar(codigo);
         }
         //Listar Todo
-        public List<Inmobiliario> ListarTodo(string codigo)
+        public List<Inmobiliario> ListarTodo()
         {
-            return InmobiliarioRepository.ListarTodo(codigo);
+            return InmobiliarioRepository.ListarTodo();
+        }
+        public void LimpiarTodo()
+        {
+            inmobiliarioRepository.LimpiarTodo();
         }
     }
 }
