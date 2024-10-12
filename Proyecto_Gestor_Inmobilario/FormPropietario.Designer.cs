@@ -71,7 +71,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(23, 268);
+            this.btnRegistrar.Location = new System.Drawing.Point(34, 263);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(111, 44);
@@ -116,8 +116,9 @@
             // 
             // tbDNI
             // 
-            this.tbDNI.Location = new System.Drawing.Point(149, 135);
+            this.tbDNI.Location = new System.Drawing.Point(149, 138);
             this.tbDNI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbDNI.MaxLength = 8;
             this.tbDNI.Name = "tbDNI";
             this.tbDNI.Size = new System.Drawing.Size(145, 22);
             this.tbDNI.TabIndex = 7;
@@ -160,6 +161,7 @@
             // 
             this.tbCelular.Location = new System.Drawing.Point(149, 220);
             this.tbCelular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbCelular.MaxLength = 9;
             this.tbCelular.Name = "tbCelular";
             this.tbCelular.Size = new System.Drawing.Size(145, 22);
             this.tbCelular.TabIndex = 12;
@@ -175,7 +177,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(149, 268);
+            this.btnLimpiar.Location = new System.Drawing.Point(160, 263);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(111, 44);
@@ -196,7 +198,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(149, 318);
+            this.btnSalir.Location = new System.Drawing.Point(160, 313);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(111, 44);
@@ -207,7 +209,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(23, 318);
+            this.btnEliminar.Location = new System.Drawing.Point(34, 313);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 44);

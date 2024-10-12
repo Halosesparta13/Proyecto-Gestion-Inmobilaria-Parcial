@@ -11,11 +11,7 @@ namespace Proyecto_Gestor_Inmobilario
         private PropietarioService propietarioService = new PropietarioService();
         private Dictionary<string, string> usuariosRegistrados = new Dictionary<string, string>()
         {
-            { "admin", "12345" },
-            { "u202211674", "12345" },
-            { "u202111433", "12345" },
-            { "u202010153", "12345" },
-            { "u202212481", "12345" }
+            { "admin", "12345" }
         };
         public FormLogin()
         {
@@ -53,7 +49,7 @@ namespace Proyecto_Gestor_Inmobilario
             }
             else
             {
-                MessageBox.Show("El archivo de usuarios no existe.");
+                //MessageBox.Show("El archivo de usuarios no existe.");
             }
         }
 
@@ -76,11 +72,13 @@ namespace Proyecto_Gestor_Inmobilario
                 else
                 {
                     MessageBox.Show("Contraseña incorrecta. Inténtalo de nuevo.");
+                    return;
                 }
             }
             else
             {
                 MessageBox.Show("Usuario no encontrado.");
+                return;
             }
         }
 
@@ -92,7 +90,7 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }
