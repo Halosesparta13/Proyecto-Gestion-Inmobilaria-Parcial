@@ -59,7 +59,7 @@
             this.dgPropietarios.Name = "dgPropietarios";
             this.dgPropietarios.RowHeadersWidth = 51;
             this.dgPropietarios.RowTemplate.Height = 24;
-            this.dgPropietarios.Size = new System.Drawing.Size(403, 310);
+            this.dgPropietarios.Size = new System.Drawing.Size(403, 367);
             this.dgPropietarios.TabIndex = 0;
             // 
             // label1
@@ -242,7 +242,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 396);
+            this.ClientSize = new System.Drawing.Size(752, 456);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tbRUC);
             this.Controls.Add(this.btnEliminar);

@@ -141,10 +141,6 @@ namespace Proyecto_Gestor_Inmobilario
             MostrarPropietarios(usuariosRegistrados);
         }
 
-        private void btnRegistrarPropiedad_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

@@ -31,6 +31,15 @@ namespace Proyecto_Gestor_Inmobilario.Repositories
         {
             return propietarios;
         }
+
+        public void Modificar(Propietario propietario)
+        {
+            // Buscar el propietario en la lista que coincide con el DNI, Nombre_Usuario y RUC
+            var propietarioExistente = propietarios.FirstOrDefault(p =>
+                p.DNI == propietario.DNI &&
+                p.Nombre_Usuario == propietario.Nombre_Usuario &&
+                p.RUC == propietario.RUC);
+        }
    
     }
 }

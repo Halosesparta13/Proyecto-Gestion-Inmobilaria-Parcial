@@ -181,6 +181,8 @@
             // 
             // dpFechaPago
             // 
+            this.dpFechaPago.CustomFormat = "dd/MM/yyyy";
+            this.dpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpFechaPago.Location = new System.Drawing.Point(174, 197);
             this.dpFechaPago.Name = "dpFechaPago";
             this.dpFechaPago.Size = new System.Drawing.Size(146, 22);
@@ -224,6 +226,8 @@
             // 
             // dpFechaFin
             // 
+            this.dpFechaFin.CustomFormat = "dd/MM/yyyy";
+            this.dpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpFechaFin.Location = new System.Drawing.Point(174, 225);
             this.dpFechaFin.Name = "dpFechaFin";
             this.dpFechaFin.Size = new System.Drawing.Size(146, 22);
