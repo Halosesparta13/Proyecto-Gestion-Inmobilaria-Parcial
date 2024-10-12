@@ -49,6 +49,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.lblNombre_Usuario = new System.Windows.Forms.Label();
+            this.lblmonto_Total = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgInquilinos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,9 +209,9 @@
             this.lbMonto.AutoSize = true;
             this.lbMonto.Location = new System.Drawing.Point(175, 256);
             this.lbMonto.Name = "lbMonto";
-            this.lbMonto.Size = new System.Drawing.Size(50, 16);
+            this.lbMonto.Size = new System.Drawing.Size(23, 16);
             this.lbMonto.TabIndex = 39;
-            this.lbMonto.Text = "S/. 0.00";
+            this.lbMonto.Text = "S/.";
             // 
             // label9
             // 
@@ -237,11 +238,21 @@
             this.lblNombre_Usuario.TabIndex = 55;
             this.lblNombre_Usuario.Text = "Nombre_Usuario";
             // 
+            // lblmonto_Total
+            // 
+            this.lblmonto_Total.AutoSize = true;
+            this.lblmonto_Total.Location = new System.Drawing.Point(204, 255);
+            this.lblmonto_Total.Name = "lblmonto_Total";
+            this.lblmonto_Total.Size = new System.Drawing.Size(82, 16);
+            this.lblmonto_Total.TabIndex = 56;
+            this.lblmonto_Total.Text = "monto_Total";
+            // 
             // FormInquilinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 442);
+            this.Controls.Add(this.lblmonto_Total);
             this.Controls.Add(this.lblNombre_Usuario);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dpFechaFin);
@@ -294,5 +305,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dpFechaFin;
         private System.Windows.Forms.Label lblNombre_Usuario;
+        private System.Windows.Forms.Label lblmonto_Total;
     }
 }

@@ -16,23 +16,29 @@ namespace Proyecto_Gestor_Inmobilario
     {
         private InquilinoService inquilinoService = new InquilinoService();
         private string codigoInmueble;
-        public FormInquilinos(string codigoInmueble)
+        private Propietario propietario;
+        private string Monto;
+        public FormInquilinos(string codigoInmueble, Propietario propietario, string Monto )
         {
             InitializeComponent();
-            MostrarInquilinos(inquilinoService.ListarTodo());
+            MostrarInquilinos(inquilinoService.ListarTodo(propietario.DNI, codigoInmueble));
             this.codigoInmueble = codigoInmueble;
+            this.propietario = propietario;
+            this.Monto = Monto;
+            lblmonto_Total.Text = $"{Monto}";
+            lblNombre_Usuario.Text = $"¡Bienvenido {propietario.Nombre_Completo}! | Inmueble: {codigoInmueble} |Fecha de último acceso {DateTime.Now}";
         }
 
-        private void MostrarInquilinos(List<Inquilino> inquilinos)
+        private void MostrarInquilinos(List<Inquilino> inquilinoss)
         {
             dgInquilinos.DataSource = null;
-            if(inquilinos.Count == 0)
+            if (inquilinoss.Count == 0)
             {
                 return;
             }
             else
             {
-                dgInquilinos.DataSource = inquilinos;
+                dgInquilinos.DataSource = inquilinoss;
             }
         }
 
@@ -57,14 +63,14 @@ namespace Proyecto_Gestor_Inmobilario
                 Fecha_Pago_Mensual = dpFechaPago.Value,
                 Fecha_Fin_Alquiler = dpFechaFin.Value
             };
-            bool registrar = inquilinoService.Registrar(inquilino);
+            bool registrar = inquilinoService.Registrar(propietario.DNI, codigoInmueble,inquilino);
             if (!registrar)
             {
                 MessageBox.Show("No puede ver registros repetidos");
                 return;
             }
 
-            MostrarInquilinos(inquilinoService.ListarTodo());
+            MostrarInquilinos(inquilinoService.ListarTodo(propietario.DNI,codigoInmueble));
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -85,12 +91,13 @@ namespace Proyecto_Gestor_Inmobilario
             }
 
             string codigo = dgInquilinos.SelectedRows[0].Cells[0].Value.ToString();
-            inquilinoService.Eliminar(codigo);
-            MostrarInquilinos(inquilinoService.ListarTodo());
+            inquilinoService.Eliminar(propietario.DNI,codigoInmueble,codigo);
+            MostrarInquilinos(inquilinoService.ListarTodo(propietario.DNI,codigoInmueble));
         }
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
+            
             FormPagos form = new FormPagos();
             form.Show();
         }

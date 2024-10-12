@@ -126,14 +126,17 @@ namespace Proyecto_Gestor_Inmobilario
                 DescipciónPropiedad = tbDescripcion.Text,
                 TipoInmueble = cbTipo.Text,
                 ServicioAgregados = tbAgregado.Text,
-                ImagePath = imageLocation
+                ImagePath = imageLocation,
+                Inquilinos = new List<Inquilino>()
             };
+            /*
             MessageBox.Show($"Ubicación: {tbDireccion.Text}\n" +
                 $"Pago Mensual: {MontoMensual}\n" +
                 $"Descripción: {tbDescripcion.Text}\n" +
                 $"Tipo de Inmueble: {cbTipo.Text}\n" +
                 $"Servicios Agregados: {tbAgregado.Text}\n" +
                 $"Image Path: {imageLocation}");
+            */
             //No se repite
             bool registrado = inmobiliarioService.Registrar(propietario.DNI,inmobiliario);
             if (!registrado)
@@ -153,7 +156,9 @@ namespace Proyecto_Gestor_Inmobilario
             }
 
             string codigo = dgInmobiliario.SelectedRows[0].Cells[0].Value.ToString();
-            FormInquilinos form = new FormInquilinos(codigo);
+            string MONTO = tbPagoMensual.Text;
+            string DNIPropietario = propietario.DNI;
+            FormInquilinos form = new FormInquilinos(codigo, propietario, MONTO);
             form.Show();
         }
 
