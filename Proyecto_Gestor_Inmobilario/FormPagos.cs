@@ -15,12 +15,19 @@ namespace Proyecto_Gestor_Inmobilario
 {
     public partial class FormPagos : Form
     {
-        private PagoService pagoService;
-        public FormPagos()
+        private PagoService pagoService; 
+        private string codigoInmueble;
+        private Propietario propietario;
+        public FormPagos(string codigoInmueble, Propietario propietario)
         {
             InitializeComponent();
             pagoService = new PagoService();
+            this.codigoInmueble = codigoInmueble;
+            this.propietario = propietario;
             CargarPagos();
+            lblFecha.Text = $"{DateTime.Now}";
+            lblNombre_Usuario.Text = $"¡Bienvenido {propietario.Nombre_Completo}!";
+            lblPropiedad.Text = $"{codigoInmueble}";
         }
 
         private void CargarPagos()

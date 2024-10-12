@@ -97,7 +97,8 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
-            FormPagos form = new FormPagos();
+            string codigoInquilino = tbDNI.Text;
+            FormPagos form = new FormPagos(codigoInmueble, propietario );
             form.Show();
         }
     }

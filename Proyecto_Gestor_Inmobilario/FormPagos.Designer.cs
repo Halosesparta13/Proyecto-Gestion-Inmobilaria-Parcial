@@ -33,9 +33,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtMontoPago = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblPropiedad = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNombrePago = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.cbEstadoPago = new System.Windows.Forms.ComboBox();
             this.btnRegistarPago = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.lblNombre_Usuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgListPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -98,14 +99,14 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "Monto";
             // 
-            // label4
+            // lblFecha
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 16);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Fecha y Hora Actual";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(124, 73);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(128, 16);
+            this.lblFecha.TabIndex = 47;
+            this.lblFecha.Text = "Fecha y Hora Actual";
             // 
             // label5
             // 
@@ -116,14 +117,14 @@
             this.label5.TabIndex = 46;
             this.label5.Text = "Fecha";
             // 
-            // label6
+            // lblPropiedad
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(124, 52);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 16);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "Nombre Propiedad";
+            this.lblPropiedad.AutoSize = true;
+            this.lblPropiedad.Location = new System.Drawing.Point(124, 52);
+            this.lblPropiedad.Name = "lblPropiedad";
+            this.lblPropiedad.Size = new System.Drawing.Size(123, 16);
+            this.lblPropiedad.TabIndex = 49;
+            this.lblPropiedad.Text = "Nombre Propiedad";
             // 
             // label8
             // 
@@ -215,11 +216,21 @@
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
+            // lblNombre_Usuario
+            // 
+            this.lblNombre_Usuario.AutoSize = true;
+            this.lblNombre_Usuario.Location = new System.Drawing.Point(46, 446);
+            this.lblNombre_Usuario.Name = "lblNombre_Usuario";
+            this.lblNombre_Usuario.Size = new System.Drawing.Size(110, 16);
+            this.lblNombre_Usuario.TabIndex = 58;
+            this.lblNombre_Usuario.Text = "Nombre_Usuario";
+            // 
             // FormPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 450);
+            this.ClientSize = new System.Drawing.Size(723, 471);
+            this.Controls.Add(this.lblNombre_Usuario);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.btnRegistarPago);
             this.Controls.Add(this.cbEstadoPago);
@@ -228,9 +239,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNombrePago);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblPropiedad);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtMontoPago);
             this.Controls.Add(this.label2);
@@ -254,9 +265,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtMontoPago;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPropiedad;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNombrePago;
         private System.Windows.Forms.Label label1;
@@ -266,5 +277,6 @@
         private System.Windows.Forms.ComboBox cbEstadoPago;
         private System.Windows.Forms.Button btnRegistarPago;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.Label lblNombre_Usuario;
     }
 }
