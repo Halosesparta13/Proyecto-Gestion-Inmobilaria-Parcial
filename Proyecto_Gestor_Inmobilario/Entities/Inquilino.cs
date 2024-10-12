@@ -16,6 +16,6 @@ namespace Proyecto_Gestor_Inmobilario.Entities
         public DateTime Fecha_Inicio_Alquiler { get; set; }
         public DateTime Fecha_Fin_Alquiler { get; set; }
         public DateTime Fecha_Pago_Mensual { get; set; }
-        public List<Pago> pagos { get; set; }
+
     }
 }

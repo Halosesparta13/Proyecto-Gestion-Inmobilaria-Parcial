@@ -1,5 +1,4 @@
-﻿using Proyecto_Gestor_Inmobilario.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +17,5 @@ namespace Proyecto_Gestor_Inmobilario.Entity
         public string TipoInmueble { get; set; }
         public string ServicioAgregados { get; set; }
         public string ImagePath { get; set; }
-        public List<Inquilino> inquilinos { get; set; }
     }
 }
