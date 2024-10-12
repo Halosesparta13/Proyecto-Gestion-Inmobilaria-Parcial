@@ -1,4 +1,5 @@
 ﻿using Proyecto_Gestor_Inmobilario.Entities;
+using Proyecto_Gestor_Inmobilario.Entity;
 using Proyecto_Gestor_Inmobilario.Services;
 using System;
 using System.Collections.Generic;
@@ -24,15 +25,20 @@ namespace Proyecto_Gestor_Inmobilario
         {
             if (!usuariosRegistrados.Any(u => u.Nombre_Usuario == "Admin"))
             {
-                usuariosRegistrados.Add(new Propietario
+                var admin = new Propietario
                 {
                     Nombre_Usuario = "Admin",
                     Contraseña = "12345",
                     DNI = "12345678",
                     Nombre_Completo = "Administrador",
                     Correo = "admin@ejemplo.com",
-                    Celular = "987654321"
-                });
+                    Celular = "987654321",
+                    RUC = "12345678912",
+                    Inmobiliarios = new List<Inmobiliario>()
+                };
+
+                usuariosRegistrados.Add(admin);
+                propietarioService.Registrar(admin);
             }
         }
         //Este era el antiguo sistema, tengo uno mejor
