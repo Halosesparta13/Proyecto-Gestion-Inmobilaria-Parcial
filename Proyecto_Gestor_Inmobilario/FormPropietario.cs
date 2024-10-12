@@ -18,16 +18,18 @@ namespace Proyecto_Gestor_Inmobilario
     public partial class FormPropietario : Form
     {
         private PropietarioService propietarioService = new PropietarioService();
-        public FormPropietario()
+        private List<Propietario> usuariosRegistrados;
+        public FormPropietario(List<Propietario> propietarios) 
         {
             InitializeComponent();
+            usuariosRegistrados = propietarios;
             MostrarPropietarios(propietarioService.ListarTodo());
         }
 
         private void MostrarPropietarios(List<Propietario> propietarios)
         {
             dgPropietarios.DataSource = null;
-            if(propietarios.Count == 0)
+            if (propietarios.Count == 0)
             {
                 return;
             }
@@ -44,8 +46,14 @@ namespace Proyecto_Gestor_Inmobilario
                 MessageBox.Show("Rellene todas las casilas");
                 return;
             }
+            if (usuariosRegistrados.Any(p => p.Nombre_Usuario == tbNombreUsuario.Text))
+            {
+                MessageBox.Show("El nombre de usuario ya existe. Elija uno diferente.");
+                return;
+            }
 
-            Propietario nuevoPropietario = new Propietario()
+            // Crear un nuevo propietario
+            Propietario nuevoPropietario = new Propietario
             {
                 DNI = tbDNI.Text,
                 Nombre_Usuario = tbNombreUsuario.Text,
@@ -57,46 +65,30 @@ namespace Proyecto_Gestor_Inmobilario
                 Inmobiliarios = new List<Inmobiliario>()
             };
 
+            // Registrar el nuevo propietario
             bool registrar = propietarioService.Registrar(nuevoPropietario);
-            if (!registrar)
+            if (registrar)
             {
-                MessageBox.Show("No puede haber registros iguales");
+                usuariosRegistrados.Add(nuevoPropietario); // Actualizar la lista en FormLogin
+                MostrarPropietarios(propietarioService.ListarTodo()); // Mostrar lista actualizada
+                MessageBox.Show("Propietario registrado exitosamente.");
+
             }
             else
             {
-                // Crear o abrir el archivo usuarios.txt
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "usuarios.txt");
-                // Limpiar el archivo antes de agregar nuevos registros
-                if (File.Exists(path))
-                {
-                    File.WriteAllText(path, string.Empty); // Limpiar el archivo
-                }
-                try
-                {
-                    using (StreamWriter writer = new StreamWriter(path, true))
-                    {
-                        writer.WriteLine($"{nuevoPropietario.Nombre_Usuario},{nuevoPropietario.Contraseña}");
-                    }
-                    MessageBox.Show("Propietario registrado exitosamente");
-                    MessageBox.Show($"Archivo se creó en: {path}");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al crear el archivo: {ex.Message}");
-                }
-
-                MostrarPropietarios(propietarioService.ListarTodo());
+                MessageBox.Show("No puede haber registros iguales");
             }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             tbNombreCompleto.Clear();
-            tbNombreCompleto.Clear();
+            tbNombreUsuario.Clear();  // Faltaba este
             tbDNI.Clear();
             tbCorreo.Clear();
             tbContraseña.Clear();
             tbCelular.Clear();
+            tbRUC.Clear();  // Faltaba este
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -106,9 +98,14 @@ namespace Proyecto_Gestor_Inmobilario
                 MessageBox.Show("Seleccione un propietario para eliminar");
                 return;
             }
+
             string NombreUsuario = dgPropietarios.SelectedRows[0].Cells[0].Value.ToString();
             propietarioService.Eliminar(NombreUsuario);
-            MostrarPropietarios(propietarioService.ListarTodo());
+
+            // Actualizar lista de usuarios registrados después de eliminar
+            usuariosRegistrados = propietarioService.ListarTodo();
+
+            MostrarPropietarios(usuariosRegistrados);
         }
 
         private void btnRegistrarPropiedad_Click(object sender, EventArgs e)

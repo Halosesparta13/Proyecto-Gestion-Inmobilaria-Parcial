@@ -1,7 +1,9 @@
-﻿using Proyecto_Gestor_Inmobilario.Services;
+﻿using Proyecto_Gestor_Inmobilario.Entities;
+using Proyecto_Gestor_Inmobilario.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Proyecto_Gestor_Inmobilario
@@ -9,16 +11,32 @@ namespace Proyecto_Gestor_Inmobilario
     public partial class FormLogin : Form
     {
         private PropietarioService propietarioService = new PropietarioService();
-        private Dictionary<string, string> usuariosRegistrados = new Dictionary<string, string>()
-        {
-            { "admin", "12345" }
-        };
+        private List<Propietario> usuariosRegistrados = new List<Propietario>();
         public FormLogin()
         {
             InitializeComponent();
-            CargarUsuariosDesdeArchivo();
+            //CargarUsuariosDesdeArchivo();
+            AgregarAdmin();
         }
 
+        //Usuario predeterminado para uso de prueba
+        private void AgregarAdmin()
+        {
+            if (!usuariosRegistrados.Any(u => u.Nombre_Usuario == "Admin"))
+            {
+                usuariosRegistrados.Add(new Propietario
+                {
+                    Nombre_Usuario = "Admin",
+                    Contraseña = "12345",
+                    DNI = "12345678",
+                    Nombre_Completo = "Administrador",
+                    Correo = "admin@ejemplo.com",
+                    Celular = "987654321"
+                });
+            }
+        }
+        //Este era el antiguo sistema, tengo uno mejor
+        /*
         private void CargarUsuariosDesdeArchivo()
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "usuarios.txt");
@@ -52,18 +70,20 @@ namespace Proyecto_Gestor_Inmobilario
                 //MessageBox.Show("El archivo de usuarios no existe.");
             }
         }
-
+        */
         private void btnIniciarSeccion_Click(object sender, EventArgs e)
         {
             // Obtener los datos introducidos por el usuario
             string usuario = tbUsuario.Text;
             string contraseña = tbContraseña.Text;
 
-            // Verificar si el usuario existe en el diccionario
-            if (usuariosRegistrados.ContainsKey(usuario))
+            // Buscar el propietario en la lista
+            var propietario = usuariosRegistrados.FirstOrDefault(p => p.Nombre_Usuario == usuario);
+
+            if (propietario != null)
             {
                 // Verificar si la contraseña es correcta
-                if (usuariosRegistrados[usuario] == contraseña)
+                if (propietario.Contraseña == contraseña)
                 {
                     MessageBox.Show("Inicio de sesión exitoso.");
                     FormInmobilario form = new FormInmobilario(usuario);
@@ -72,19 +92,17 @@ namespace Proyecto_Gestor_Inmobilario
                 else
                 {
                     MessageBox.Show("Contraseña incorrecta. Inténtalo de nuevo.");
-                    return;
                 }
             }
             else
             {
                 MessageBox.Show("Usuario no encontrado.");
-                return;
             }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            FormPropietario form = new FormPropietario();
+            FormPropietario form = new FormPropietario(usuariosRegistrados);
             form.Show();
         }
 

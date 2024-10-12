@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Gestor_Inmobilario.Entity
 {
-    internal class Inmobiliario
+    public class Inmobiliario
     {
         public Inmobiliario() { }
         public string Inmueble_Id { get; set; }

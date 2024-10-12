@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Gestor_Inmobilario.Entities
 {
-    internal class Propietario
+    public class Propietario
     {
         public Propietario() { }
         public string Nombre_Usuario { get; set; }
