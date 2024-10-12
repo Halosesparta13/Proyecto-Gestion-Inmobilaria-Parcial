@@ -46,6 +46,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbRUC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPropietarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +73,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(34, 263);
+            this.btnRegistrar.Location = new System.Drawing.Point(34, 279);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(111, 44);
@@ -177,7 +179,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(160, 263);
+            this.btnLimpiar.Location = new System.Drawing.Point(160, 279);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(111, 44);
@@ -198,7 +200,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(160, 313);
+            this.btnSalir.Location = new System.Drawing.Point(160, 329);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(111, 44);
@@ -209,7 +211,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(34, 313);
+            this.btnEliminar.Location = new System.Drawing.Point(34, 329);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 44);
@@ -218,11 +220,31 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 249);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 16);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "RUC";
+            // 
+            // tbRUC
+            // 
+            this.tbRUC.Location = new System.Drawing.Point(148, 246);
+            this.tbRUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbRUC.MaxLength = 11;
+            this.tbRUC.Name = "tbRUC";
+            this.tbRUC.Size = new System.Drawing.Size(145, 22);
+            this.tbRUC.TabIndex = 18;
+            // 
             // FormPropietario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 387);
+            this.ClientSize = new System.Drawing.Size(752, 396);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.tbRUC);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label7);
@@ -270,5 +292,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbRUC;
     }
 }

@@ -39,7 +39,7 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (tbNombreCompleto.Text == "" || tbNombreUsuario.Text == "" || tbDNI.Text == "" || tbCorreo.Text == "" || tbContraseña.Text == "" || tbCelular.Text == "")
+            if (tbRUC.Text==""||  tbNombreCompleto.Text == "" || tbNombreUsuario.Text == "" || tbDNI.Text == "" || tbCorreo.Text == "" || tbContraseña.Text == "" || tbCelular.Text == "")
             {
                 MessageBox.Show("Rellene todas las casilas");
                 return;
@@ -53,6 +53,7 @@ namespace Proyecto_Gestor_Inmobilario
                 Correo = tbCorreo.Text,
                 Contraseña = tbContraseña.Text,
                 Celular = tbCelular.Text,
+                RUC = tbRUC.Text,
                 Inmobiliarios = new List<Inmobiliario>()
             };
 
