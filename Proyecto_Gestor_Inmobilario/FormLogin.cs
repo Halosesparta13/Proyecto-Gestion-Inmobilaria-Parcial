@@ -15,9 +15,10 @@ namespace Proyecto_Gestor_Inmobilario
 
         private Dictionary<string, string> usuariosRegistrados = new Dictionary<string, string>()
         {
-            { "admin", "123" },
-            { "user1", "123" },
-            { "user2", "123" },
+            { "u202211674", "12345" },
+            { "u202111433", "12345" },
+            { "u202010153", "12345" },
+            { "u202212481", "12345" }
         };
 
         private void btnIniciarSeccion_Click(object sender, EventArgs e)
