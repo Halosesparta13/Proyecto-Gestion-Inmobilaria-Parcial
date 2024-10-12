@@ -105,5 +105,11 @@ namespace Proyecto_Gestor_Inmobilario
                 MessageBox.Show("Ha ocurrido un error en la carga", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnRegistrarInquilinos_Click(object sender, EventArgs e)
+        {
+            FormInquilinos form = new FormInquilinos();
+            form.Show();
+        }
     }
 }

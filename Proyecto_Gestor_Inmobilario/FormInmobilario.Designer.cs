@@ -47,6 +47,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.imagePicture = new System.Windows.Forms.PictureBox();
+            this.btnRegistrarInquilinos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgInmobiliario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePicture)).BeginInit();
             this.SuspendLayout();
@@ -153,9 +154,9 @@
             // 
             // btnCargarImagen
             // 
-            this.btnCargarImagen.Location = new System.Drawing.Point(579, 212);
+            this.btnCargarImagen.Location = new System.Drawing.Point(578, 202);
             this.btnCargarImagen.Name = "btnCargarImagen";
-            this.btnCargarImagen.Size = new System.Drawing.Size(145, 31);
+            this.btnCargarImagen.Size = new System.Drawing.Size(145, 48);
             this.btnCargarImagen.TabIndex = 47;
             this.btnCargarImagen.Text = "Cargar Imagen";
             this.btnCargarImagen.UseVisualStyleBackColor = true;
@@ -180,27 +181,27 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(27, 212);
+            this.btnRegistrar.Location = new System.Drawing.Point(27, 202);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(145, 31);
+            this.btnRegistrar.Size = new System.Drawing.Size(121, 48);
             this.btnRegistrar.TabIndex = 50;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(190, 212);
+            this.btnEliminar.Location = new System.Drawing.Point(154, 202);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(145, 31);
+            this.btnEliminar.Size = new System.Drawing.Size(121, 48);
             this.btnEliminar.TabIndex = 51;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(355, 212);
+            this.btnLimpiar.Location = new System.Drawing.Point(281, 202);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(145, 31);
+            this.btnLimpiar.Size = new System.Drawing.Size(121, 48);
             this.btnLimpiar.TabIndex = 52;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -215,11 +216,22 @@
             this.imagePicture.TabIndex = 38;
             this.imagePicture.TabStop = false;
             // 
+            // btnRegistrarInquilinos
+            // 
+            this.btnRegistrarInquilinos.Location = new System.Drawing.Point(408, 202);
+            this.btnRegistrarInquilinos.Name = "btnRegistrarInquilinos";
+            this.btnRegistrarInquilinos.Size = new System.Drawing.Size(121, 48);
+            this.btnRegistrarInquilinos.TabIndex = 53;
+            this.btnRegistrarInquilinos.Text = "Registrar Inquilinos";
+            this.btnRegistrarInquilinos.UseVisualStyleBackColor = true;
+            this.btnRegistrarInquilinos.Click += new System.EventHandler(this.btnRegistrarInquilinos_Click);
+            // 
             // FormInmobilario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 492);
+            this.Controls.Add(this.btnRegistrarInquilinos);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnRegistrar);
@@ -269,5 +281,6 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnRegistrarInquilinos;
     }
 }

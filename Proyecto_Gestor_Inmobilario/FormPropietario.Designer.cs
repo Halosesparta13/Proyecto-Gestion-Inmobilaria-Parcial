@@ -46,7 +46,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnRegistrarPropiedad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPropietarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +57,7 @@
             this.dgPropietarios.Name = "dgPropietarios";
             this.dgPropietarios.RowHeadersWidth = 51;
             this.dgPropietarios.RowTemplate.Height = 24;
-            this.dgPropietarios.Size = new System.Drawing.Size(403, 352);
+            this.dgPropietarios.Size = new System.Drawing.Size(403, 310);
             this.dgPropietarios.TabIndex = 0;
             // 
             // label1
@@ -197,7 +196,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(83, 368);
+            this.btnSalir.Location = new System.Drawing.Point(149, 318);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(111, 44);
@@ -217,23 +216,11 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnRegistrarPropiedad
-            // 
-            this.btnRegistrarPropiedad.Location = new System.Drawing.Point(149, 318);
-            this.btnRegistrarPropiedad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRegistrarPropiedad.Name = "btnRegistrarPropiedad";
-            this.btnRegistrarPropiedad.Size = new System.Drawing.Size(111, 44);
-            this.btnRegistrarPropiedad.TabIndex = 18;
-            this.btnRegistrarPropiedad.Text = "Registrar Propiedad";
-            this.btnRegistrarPropiedad.UseVisualStyleBackColor = true;
-            this.btnRegistrarPropiedad.Click += new System.EventHandler(this.btnRegistrarPropiedad_Click);
-            // 
             // FormPropietario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 430);
-            this.Controls.Add(this.btnRegistrarPropiedad);
+            this.ClientSize = new System.Drawing.Size(752, 387);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label7);
@@ -281,6 +268,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnRegistrarPropiedad;
     }
 }
