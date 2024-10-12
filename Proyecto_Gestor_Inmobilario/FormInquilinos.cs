@@ -53,6 +53,34 @@ namespace Proyecto_Gestor_Inmobilario
                 MessageBox.Show("Rellene todas las casillas");
                 return;
             }
+            // Validación de longitud del DNI
+            if (Dni.Length != 8 || !Dni.All(char.IsDigit))
+            {
+                MessageBox.Show("El DNI debe contener 8 dígitos numéricos.");
+                return;
+            }
+            // Validación del número de celular
+            if (Celular.Length < 9 || !Celular.All(char.IsDigit))
+            {
+                MessageBox.Show("El número de celular debe tener al menos 9 dígitos y solo contener números.");
+                return;
+            }
+            // Validación del formato de correo electrónico
+            if (!Correo.Contains("@") || !Correo.Contains("."))
+            {
+                MessageBox.Show("Ingrese un correo electrónico válido.");
+                return;
+            }
+            if (dpFechaPago.Value < DateTime.Now)
+            {
+                MessageBox.Show("La fecha de pago mensual no puede ser anterior a la fecha actual.");
+                return;
+            }
+            if (dpFechaFin.Value <= dpFechaPago.Value)
+            {
+                MessageBox.Show("La fecha de fin del alquiler debe ser posterior a la fecha de pago mensual.");
+                return;
+            }
             Inquilino inquilino = new Inquilino()
             {
                 DNI = Dni,

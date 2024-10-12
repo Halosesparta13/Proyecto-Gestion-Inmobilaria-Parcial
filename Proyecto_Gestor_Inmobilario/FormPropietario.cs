@@ -41,11 +41,44 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            string dni = tbDNI.Text;
+            string celular = tbCelular.Text;
+            string correo = tbCorreo.Text;
+            string ruc = tbRUC.Text;
+
             if (tbRUC.Text==""||  tbNombreCompleto.Text == "" || tbNombreUsuario.Text == "" || tbDNI.Text == "" || tbCorreo.Text == "" || tbContraseña.Text == "" || tbCelular.Text == "")
             {
                 MessageBox.Show("Rellene todas las casilas");
                 return;
             }
+            // Validación de longitud del DNI
+            if (dni.Length != 8 || !dni.All(char.IsDigit))
+            {
+                MessageBox.Show("El DNI debe contener 8 dígitos numéricos.");
+                return;
+            }
+
+            // Validación del número de celular
+            if (celular.Length < 9 || !celular.All(char.IsDigit))
+            {
+                MessageBox.Show("El número de celular debe tener al menos 9 dígitos y solo contener números.");
+                return;
+            }
+
+            // Validación del formato de correo electrónico
+            if (!correo.Contains("@") || !correo.Contains("."))
+            {
+                MessageBox.Show("Ingrese un correo electrónico válido.");
+                return;
+            }
+
+            // Validación del RUC (asumiendo 11 dígitos)
+            if (ruc.Length != 11 || !ruc.All(char.IsDigit))
+            {
+                MessageBox.Show("El RUC debe contener 11 dígitos numéricos.");
+                return;
+            }
+
             if (usuariosRegistrados.Any(p => p.Nombre_Usuario == tbNombreUsuario.Text))
             {
                 MessageBox.Show("El nombre de usuario ya existe. Elija uno diferente.");
