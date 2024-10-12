@@ -190,6 +190,10 @@ namespace Proyecto_Gestor_Inmobilario
             MostrarPropiedades(inmobiliarioService.ListarTodo(propietario.DNI));
         }
 
-
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes form = new FormReportes();
+            form.Show();
+        }
     }
 }
