@@ -12,26 +12,27 @@ namespace Proyecto_Gestor_Inmobilario.Services
     {
         private InquilinoRepository inquilinoRepository = new InquilinoRepository();
 
-        public bool Registrar(Inquilino inquilino)
+        public bool Registrar(string codigoInmueble, Inquilino inquilino)
         {
-            if (inquilinoRepository.Existe(inquilino.DNI))
+            if (inquilinoRepository.Existe(codigoInmueble, inquilino.DNI))
             {
                 return false;
             }
             {
-                inquilinoRepository.Registrar(inquilino);
+                inquilinoRepository.Registrar(codigoInmueble, inquilino);
                 return true;
             }
         }
 
-        public List<Inquilino> ListarTodo()
+        public List<Inquilino> ListarTodo(string codigoInmueble)
         {
-            return InquilinoRepository.ListarTodo();
+            return InquilinoRepository.ListarTodo(codigoInmueble);
         }
 
-        public void Eliminar(string codigo)
+        public void Eliminar(string codigoInmueble, string CodigoInquilino)
         {
-            inquilinoRepository.Eliminar(codigo);
+            inquilinoRepository.Eliminar(codigoInmueble, CodigoInquilino);
         }
+
     }
 }

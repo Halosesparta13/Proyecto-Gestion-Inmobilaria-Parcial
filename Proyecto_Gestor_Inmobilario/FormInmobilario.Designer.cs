@@ -49,6 +49,8 @@
             this.pictureBoxInmobiliario = new System.Windows.Forms.PictureBox();
             this.btnRegistrarInquilinos = new System.Windows.Forms.Button();
             this.lblNombre_Usuario = new System.Windows.Forms.Label();
+            this.tbInmueble_Id = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgInmobiliario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInmobiliario)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +59,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(266, 37);
+            this.label7.Location = new System.Drawing.Point(271, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(210, 29);
             this.label7.TabIndex = 34;
@@ -66,7 +68,7 @@
             // dgInmobiliario
             // 
             this.dgInmobiliario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgInmobiliario.Location = new System.Drawing.Point(27, 266);
+            this.dgInmobiliario.Location = new System.Drawing.Point(22, 290);
             this.dgInmobiliario.Name = "dgInmobiliario";
             this.dgInmobiliario.RowHeadersWidth = 51;
             this.dgInmobiliario.RowTemplate.Height = 24;
@@ -75,7 +77,7 @@
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(134, 92);
+            this.tbNombre.Location = new System.Drawing.Point(129, 116);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(145, 22);
             this.tbNombre.TabIndex = 37;
@@ -83,7 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 95);
+            this.label1.Location = new System.Drawing.Point(29, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 36;
@@ -91,7 +93,7 @@
             // 
             // tbDireccion
             // 
-            this.tbDireccion.Location = new System.Drawing.Point(134, 120);
+            this.tbDireccion.Location = new System.Drawing.Point(129, 144);
             this.tbDireccion.Name = "tbDireccion";
             this.tbDireccion.Size = new System.Drawing.Size(145, 22);
             this.tbDireccion.TabIndex = 40;
@@ -99,7 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 123);
+            this.label2.Location = new System.Drawing.Point(29, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 39;
@@ -107,7 +109,7 @@
             // 
             // tbPagoMensual
             // 
-            this.tbPagoMensual.Location = new System.Drawing.Point(134, 148);
+            this.tbPagoMensual.Location = new System.Drawing.Point(129, 172);
             this.tbPagoMensual.Name = "tbPagoMensual";
             this.tbPagoMensual.Size = new System.Drawing.Size(145, 22);
             this.tbPagoMensual.TabIndex = 42;
@@ -115,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 151);
+            this.label3.Location = new System.Drawing.Point(29, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 16);
             this.label3.TabIndex = 41;
@@ -124,7 +126,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(294, 123);
+            this.label4.Location = new System.Drawing.Point(289, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 16);
             this.label4.TabIndex = 43;
@@ -132,14 +134,14 @@
             // 
             // tbDescripcion
             // 
-            this.tbDescripcion.Location = new System.Drawing.Point(379, 120);
+            this.tbDescripcion.Location = new System.Drawing.Point(374, 144);
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(145, 22);
             this.tbDescripcion.TabIndex = 44;
             // 
             // tbAgregado
             // 
-            this.tbAgregado.Location = new System.Drawing.Point(379, 148);
+            this.tbAgregado.Location = new System.Drawing.Point(374, 172);
             this.tbAgregado.Name = "tbAgregado";
             this.tbAgregado.Size = new System.Drawing.Size(145, 22);
             this.tbAgregado.TabIndex = 46;
@@ -147,7 +149,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(294, 151);
+            this.label5.Location = new System.Drawing.Point(289, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 16);
             this.label5.TabIndex = 45;
@@ -155,7 +157,7 @@
             // 
             // btnCargarImagen
             // 
-            this.btnCargarImagen.Location = new System.Drawing.Point(578, 202);
+            this.btnCargarImagen.Location = new System.Drawing.Point(573, 226);
             this.btnCargarImagen.Name = "btnCargarImagen";
             this.btnCargarImagen.Size = new System.Drawing.Size(145, 48);
             this.btnCargarImagen.TabIndex = 47;
@@ -166,7 +168,7 @@
             // cbTipoInmueble
             // 
             this.cbTipoInmueble.AutoSize = true;
-            this.cbTipoInmueble.Location = new System.Drawing.Point(294, 95);
+            this.cbTipoInmueble.Location = new System.Drawing.Point(289, 119);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
             this.cbTipoInmueble.Size = new System.Drawing.Size(62, 16);
             this.cbTipoInmueble.TabIndex = 48;
@@ -179,14 +181,14 @@
             "Casa",
             "Departamento",
             "Terreno"});
-            this.comboBox1.Location = new System.Drawing.Point(379, 90);
+            this.comboBox1.Location = new System.Drawing.Point(374, 114);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(145, 24);
             this.comboBox1.TabIndex = 49;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(27, 202);
+            this.btnRegistrar.Location = new System.Drawing.Point(22, 226);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(121, 48);
             this.btnRegistrar.TabIndex = 50;
@@ -196,7 +198,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(154, 202);
+            this.btnEliminar.Location = new System.Drawing.Point(149, 226);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(121, 48);
             this.btnEliminar.TabIndex = 51;
@@ -206,7 +208,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(281, 202);
+            this.btnLimpiar.Location = new System.Drawing.Point(276, 226);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(121, 48);
             this.btnLimpiar.TabIndex = 52;
@@ -217,7 +219,7 @@
             // pictureBoxInmobiliario
             // 
             this.pictureBoxInmobiliario.Image = global::Proyecto_Gestor_Inmobilario.Properties.Resources.inmueble;
-            this.pictureBoxInmobiliario.Location = new System.Drawing.Point(562, 49);
+            this.pictureBoxInmobiliario.Location = new System.Drawing.Point(557, 73);
             this.pictureBoxInmobiliario.Name = "pictureBoxInmobiliario";
             this.pictureBoxInmobiliario.Size = new System.Drawing.Size(180, 139);
             this.pictureBoxInmobiliario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -226,7 +228,7 @@
             // 
             // btnRegistrarInquilinos
             // 
-            this.btnRegistrarInquilinos.Location = new System.Drawing.Point(408, 202);
+            this.btnRegistrarInquilinos.Location = new System.Drawing.Point(403, 226);
             this.btnRegistrarInquilinos.Name = "btnRegistrarInquilinos";
             this.btnRegistrarInquilinos.Size = new System.Drawing.Size(121, 48);
             this.btnRegistrarInquilinos.TabIndex = 53;
@@ -237,17 +239,35 @@
             // lblNombre_Usuario
             // 
             this.lblNombre_Usuario.AutoSize = true;
-            this.lblNombre_Usuario.Location = new System.Drawing.Point(27, 487);
+            this.lblNombre_Usuario.Location = new System.Drawing.Point(22, 511);
             this.lblNombre_Usuario.Name = "lblNombre_Usuario";
             this.lblNombre_Usuario.Size = new System.Drawing.Size(110, 16);
             this.lblNombre_Usuario.TabIndex = 54;
             this.lblNombre_Usuario.Text = "Nombre_Usuario";
             // 
+            // tbInmueble_Id
+            // 
+            this.tbInmueble_Id.Location = new System.Drawing.Point(129, 88);
+            this.tbInmueble_Id.Name = "tbInmueble_Id";
+            this.tbInmueble_Id.Size = new System.Drawing.Size(145, 22);
+            this.tbInmueble_Id.TabIndex = 56;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(29, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 16);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "Inmueble Id";
+            // 
             // FormInmobilario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 517);
+            this.ClientSize = new System.Drawing.Size(773, 535);
+            this.Controls.Add(this.tbInmueble_Id);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblNombre_Usuario);
             this.Controls.Add(this.btnRegistrarInquilinos);
             this.Controls.Add(this.btnLimpiar);
@@ -301,5 +321,7 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnRegistrarInquilinos;
         private System.Windows.Forms.Label lblNombre_Usuario;
+        private System.Windows.Forms.TextBox tbInmueble_Id;
+        private System.Windows.Forms.Label label6;
     }
 }

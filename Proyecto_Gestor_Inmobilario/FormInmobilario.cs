@@ -1,4 +1,5 @@
-﻿using Proyecto_Gestor_Inmobilario.Entity;
+﻿using Proyecto_Gestor_Inmobilario.Entities;
+using Proyecto_Gestor_Inmobilario.Entity;
 using Proyecto_Gestor_Inmobilario.Services;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Proyecto_Gestor_Inmobilario
     public partial class FormInmobilario : Form
     {
         private InmobiliarioService inmobiliarioService = new InmobiliarioService();
-        private string Nombre_Usuario;
+        string Nombre_Usuario;
         public FormInmobilario(string Nombre_Usuario)
         {
             InitializeComponent();
@@ -93,7 +94,7 @@ namespace Proyecto_Gestor_Inmobilario
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             //Validación de campos
-            if (tbNombre.Text == "" || tbDireccion.Text == "" || tbDescripcion.Text == "" || cbTipoInmueble.Text == "" || tbPagoMensual.Text == "" || tbAgregado.Text == "")
+            if (tbInmueble_Id.Text ==""|| tbNombre.Text == "" || tbDireccion.Text == "" || tbDescripcion.Text == "" || cbTipoInmueble.Text == "" || tbPagoMensual.Text == "" || tbAgregado.Text == "")
             {
                 MessageBox.Show("Ingrese todos los campos");
                 return;
@@ -101,23 +102,25 @@ namespace Proyecto_Gestor_Inmobilario
             //Creacion de objetos
             Inmobiliario inmobiliario = new Inmobiliario()
             {
+                Inmueble_Id = tbInmueble_Id.Text,
                 NombrePropiedad = tbNombre.Text,
                 Ubicación = tbDireccion.Text,
-                PagoMensual = int.Parse(tbPagoMensual.Text),
+                PagoMensual = decimal.Parse(tbPagoMensual.Text),
                 DescipciónPropiedad = tbDescripcion.Text,
                 TipoInmueble = cbTipoInmueble.Text,
                 ServicioAgregados = tbAgregado.Text,
-                ImagePath = imageLocation
+                ImagePath = imageLocation,
+                inquilinos = new List<Inquilino>()
             };
             //No se repite
-            bool registrado = inmobiliarioService.Registrar(inmobiliario);
+            bool registrado = inmobiliarioService.Registrar(Nombre_Usuario, inmobiliario);
             if (!registrado)
             {
                 MessageBox.Show("Debe de ingresar un registro diferente");
                 return;
             }
             //Mostrar
-            MostrarPropiedades(inmobiliarioService.ListarTodo());
+            MostrarPropiedades(inmobiliarioService.ListarTodo(Nombre_Usuario));
         }
         private void btnRegistrarInquilinos_Click(object sender, EventArgs e)
         {
@@ -128,7 +131,7 @@ namespace Proyecto_Gestor_Inmobilario
             }
 
             string codigo = dgInmobiliario.SelectedRows[0].Cells[0].Value.ToString();
-            FormInquilinos form = new FormInquilinos();
+            FormInquilinos form = new FormInquilinos(codigo);
             form.Show();
         }
 
@@ -143,17 +146,28 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //validar selección
+            // Validar selección
             if (dgInmobiliario.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Seleccione un registro");
                 return;
             }
-            string codigo = dgInmobiliario.SelectedRows[0].Cells[0].ToString();
-            inmobiliarioService.Eliminar(codigo);
-            MostrarPropiedades(inmobiliarioService.ListarTodo());
+
+            string codigo = dgInmobiliario.SelectedRows[0].Cells["Inmueble_Id"].Value.ToString(); // Cambia esto si el nombre de la columna es diferente
+
+            // Llamar al método de eliminación
+            try
+            {
+                inmobiliarioService.Eliminar(Nombre_Usuario, codigo);
+                MostrarPropiedades(inmobiliarioService.ListarTodo(Nombre_Usuario));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Muestra el mensaje de error en caso de que algo falle
+            }
         }
+    }
 
         
-    }
+    
 }

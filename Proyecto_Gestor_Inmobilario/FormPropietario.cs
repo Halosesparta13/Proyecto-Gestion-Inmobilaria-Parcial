@@ -47,8 +47,8 @@ namespace Proyecto_Gestor_Inmobilario
 
             Propietario nuevoPropietario = new Propietario()
             {
-                Nombre_Usuario = tbNombreUsuario.Text,
                 DNI = tbDNI.Text,
+                Nombre_Usuario = tbNombreUsuario.Text,
                 Nombre_Completo = tbNombreCompleto.Text,
                 Correo = tbCorreo.Text,
                 Contraseña = tbContraseña.Text,
