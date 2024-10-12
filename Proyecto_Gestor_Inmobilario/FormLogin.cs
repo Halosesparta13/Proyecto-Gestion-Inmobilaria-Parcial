@@ -85,8 +85,8 @@ namespace Proyecto_Gestor_Inmobilario
                 // Verificar si la contraseña es correcta
                 if (propietario.Contraseña == contraseña)
                 {
-                    MessageBox.Show("Inicio de sesión exitoso.");
-                    FormInmobilario form = new FormInmobilario(usuario);
+                    MessageBox.Show("Inicio de sesión exitosa.");
+                    FormInmobilario form = new FormInmobilario(propietario);
                     form.Show();
                 }
                 else

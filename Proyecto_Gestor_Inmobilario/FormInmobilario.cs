@@ -1,4 +1,5 @@
-﻿using Proyecto_Gestor_Inmobilario.Entity;
+﻿using Proyecto_Gestor_Inmobilario.Entities;
+using Proyecto_Gestor_Inmobilario.Entity;
 using Proyecto_Gestor_Inmobilario.Services;
 using System;
 using System.Collections.Generic;
@@ -15,12 +16,12 @@ namespace Proyecto_Gestor_Inmobilario
     public partial class FormInmobilario : Form
     {
         private InmobiliarioService inmobiliarioService = new InmobiliarioService();
-        private string Nombre_Usuario;
-        public FormInmobilario(string Nombre_Usuario)
+        private Propietario propietario; // Almacena el objeto propietario
+        public FormInmobilario(Propietario propietario)
         {
             InitializeComponent();
-            this.Nombre_Usuario = Nombre_Usuario;
-            lblNombre_Usuario.Text = $"¡Bienvenido {Nombre_Usuario}! | Fecha de último acceso {DateTime.Now}";
+            this.propietario = propietario;
+            lblNombre_Usuario.Text = $"¡Bienvenido {propietario.Nombre_Completo}! | Fecha de último acceso {DateTime.Now}";
             dgInmobiliario.SelectionChanged += dgInmobiliario_SelectionChanged;
         }
 
