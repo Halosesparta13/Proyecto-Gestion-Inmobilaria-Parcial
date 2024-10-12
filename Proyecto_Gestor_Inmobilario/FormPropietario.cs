@@ -1,4 +1,5 @@
 ﻿using Proyecto_Gestor_Inmobilario.Entities;
+using Proyecto_Gestor_Inmobilario.Entity;
 using Proyecto_Gestor_Inmobilario.Repositories;
 using Proyecto_Gestor_Inmobilario.Services;
 using System;
@@ -47,11 +48,12 @@ namespace Proyecto_Gestor_Inmobilario
             Propietario nuevoPropietario = new Propietario()
             {
                 Nombre_Usuario = tbNombreUsuario.Text,
-                Nombre_Completo = tbNombreCompleto.Text,
                 DNI = tbDNI.Text,
+                Nombre_Completo = tbNombreCompleto.Text,
                 Correo = tbCorreo.Text,
                 Contraseña = tbContraseña.Text,
                 Celular = tbCelular.Text,
+                Inmobiliarios = new List<Inmobiliario>()
             };
 
             bool registrar = propietarioService.Registrar(nuevoPropietario);

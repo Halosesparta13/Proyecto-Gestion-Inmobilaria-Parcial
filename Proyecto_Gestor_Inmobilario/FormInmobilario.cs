@@ -110,6 +110,13 @@ namespace Proyecto_Gestor_Inmobilario
 
         private void btnRegistrarInquilinos_Click(object sender, EventArgs e)
         {
+            if(dgInmobiliario.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("¡Seleccione un registro!");
+                return;
+            }
+
+            string codigo = dgInmobiliario.SelectedRows[0].Cells[0].Value.ToString();
             FormInquilinos form = new FormInquilinos();
             form.Show();
         }

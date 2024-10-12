@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Gestor_Inmobilario.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,17 @@ namespace Proyecto_Gestor_Inmobilario
             InitializeComponent();
         }
 
-
+        private void MostrarInquilinos(List<Inquilino> inquilinos)
+        {
+            dgInquilinos.DataSource = null;
+            if(inquilinos.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                dgInquilinos.DataSource = inquilinos;
+            }
+        }
     }
 }

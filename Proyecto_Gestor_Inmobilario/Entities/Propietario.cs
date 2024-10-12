@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Gestor_Inmobilario.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,6 @@ namespace Proyecto_Gestor_Inmobilario.Entities
         public string Contraseña { get; set; }
         public string Celular { get; set; }
         public string RUC { get; set; }
+        public List<Inmobiliario> Inmobiliarios { get; set; }
     }
 }
