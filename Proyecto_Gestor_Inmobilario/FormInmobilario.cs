@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -98,6 +99,7 @@ namespace Proyecto_Gestor_Inmobilario
                 MessageBox.Show("Ingrese todos los campos");
                 return;
             }
+
             decimal MontoMensual = 0;
             try
             {
@@ -126,15 +128,21 @@ namespace Proyecto_Gestor_Inmobilario
                 ServicioAgregados = tbAgregado.Text,
                 ImagePath = imageLocation
             };
+            MessageBox.Show($"Ubicación: {tbDireccion.Text}\n" +
+                $"Pago Mensual: {MontoMensual}\n" +
+                $"Descripción: {tbDescripcion.Text}\n" +
+                $"Tipo de Inmueble: {cbTipo.Text}\n" +
+                $"Servicios Agregados: {tbAgregado.Text}\n" +
+                $"Image Path: {imageLocation}");
             //No se repite
-            bool registrado = inmobiliarioService.Registrar(inmobiliario);
+            bool registrado = inmobiliarioService.Registrar(propietario.DNI,inmobiliario);
             if (!registrado)
             {
                 MessageBox.Show("Debe de ingresar un registro diferente");
                 return;
             }
             //Mostrar
-            MostrarPropiedades(inmobiliarioService.ListarTodo());
+            MostrarPropiedades(inmobiliarioService.ListarTodo(propietario.DNI));
         }
         private void btnRegistrarInquilinos_Click(object sender, EventArgs e)
         {
@@ -171,10 +179,10 @@ namespace Proyecto_Gestor_Inmobilario
             string codigo = dgInmobiliario.SelectedRows[0].Cells["Inmueble_Id"].Value.ToString();
 
             // Llamar al servicio para eliminar el inmueble
-            inmobiliarioService.Eliminar(codigo);
+            inmobiliarioService.Eliminar(propietario.DNI, codigo);
 
             // Mostrar la lista actualizada de propiedades
-            MostrarPropiedades(inmobiliarioService.ListarTodo());
+            MostrarPropiedades(inmobiliarioService.ListarTodo(propietario.DNI));
         }
 
 

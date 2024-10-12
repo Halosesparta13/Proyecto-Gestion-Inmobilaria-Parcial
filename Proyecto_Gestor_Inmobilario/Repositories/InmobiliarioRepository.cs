@@ -1,6 +1,8 @@
-﻿using Proyecto_Gestor_Inmobilario.Entity;
+﻿using Proyecto_Gestor_Inmobilario.Entities;
+using Proyecto_Gestor_Inmobilario.Entity;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,31 +11,45 @@ namespace Proyecto_Gestor_Inmobilario.Repositories
 {
     internal class InmobiliarioRepository
     {
-        private static List<Inmobiliario> inmobiliarios = new List<Inmobiliario>();
+
         //Existe
-        public bool Existe(string codigo)
+        public bool Existe(string codigoInmobilario)
         {
-            return inmobiliarios.Exists(a => a.Inmueble_Id.Equals(codigo));
+            List<Propietario> propietarios = PropietarioRepository.ListarTodo();
+            return propietarios.Exists(e => e.Inmobiliarios.Any(i => i.Inmueble_Id.Equals(codigoInmobilario)));
         }
         //Registrar
-        public void Registrar(Inmobiliario inmobiliario)
+        public void Registrar(string DNI, Inmobiliario inmobiliario)
         {
-            inmobiliarios.Add(inmobiliario);
+            List<Propietario> propietarios = PropietarioRepository.ListarTodo();
+            Propietario propietario = propietarios.Find(p => p.DNI.Equals(DNI));
+            if (propietario == null)
+            {
+                throw new ArgumentException($"No se encontró un propietario con el DNI: {DNI}");
+            }
+            propietario.Inmobiliarios.Add(inmobiliario);
+
         }
         //Eliminar
-        public void Eliminar(string codigo)
+        public void Eliminar(string DNI, string codigoInmobilario)
         {
-            inmobiliarios.RemoveAll(a => a.Inmueble_Id.Equals(codigo));
+            List<Propietario> propietarios = PropietarioRepository.ListarTodo();
+            Propietario propietario = propietarios.Find(p => p.DNI.Equals(DNI));
+            propietario.Inmobiliarios.RemoveAll(a => a.Inmueble_Id.Equals(codigoInmobilario));
         }
         //Listar Todo
-        public static List<Inmobiliario> ListarTodo()
+        public List<Inmobiliario> ListarTodo(string DNI)
         {
-            return inmobiliarios;
+
+            List<Propietario> propietarios = PropietarioRepository.ListarTodo();
+            Propietario propietario = propietarios.Find(p => p.DNI == DNI);
+            if (propietario == null)
+            {
+                throw new ArgumentException($"No se encontró un propietario con el DNI: {DNI}");
+            }
+            return propietario.Inmobiliarios;
         }
 
-        public void LimpiarTodo()
-        {
-            inmobiliarios.Clear();
-        }
+
     }
 }
