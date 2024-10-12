@@ -53,21 +53,23 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(126, 327);
+            this.btnEliminar.Location = new System.Drawing.Point(195, 295);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(111, 33);
+            this.btnEliminar.Size = new System.Drawing.Size(111, 46);
             this.btnEliminar.TabIndex = 35;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(126, 405);
+            this.btnSalir.Location = new System.Drawing.Point(195, 347);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(111, 33);
+            this.btnSalir.Size = new System.Drawing.Size(111, 46);
             this.btnSalir.TabIndex = 34;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label7
             // 
@@ -81,12 +83,13 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(126, 366);
+            this.btnLimpiar.Location = new System.Drawing.Point(69, 347);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(111, 33);
+            this.btnLimpiar.Size = new System.Drawing.Size(111, 46);
             this.btnLimpiar.TabIndex = 32;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label6
             // 
@@ -100,6 +103,7 @@
             // tbCelular
             // 
             this.tbCelular.Location = new System.Drawing.Point(173, 134);
+            this.tbCelular.MaxLength = 9;
             this.tbCelular.Name = "tbCelular";
             this.tbCelular.Size = new System.Drawing.Size(145, 22);
             this.tbCelular.TabIndex = 30;
@@ -123,6 +127,7 @@
             // tbDNI
             // 
             this.tbDNI.Location = new System.Drawing.Point(174, 77);
+            this.tbDNI.MaxLength = 8;
             this.tbDNI.Name = "tbDNI";
             this.tbDNI.Size = new System.Drawing.Size(145, 22);
             this.tbDNI.TabIndex = 25;
@@ -145,12 +150,13 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(126, 288);
+            this.btnRegistrar.Location = new System.Drawing.Point(69, 295);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(111, 33);
+            this.btnRegistrar.Size = new System.Drawing.Size(111, 46);
             this.btnRegistrar.TabIndex = 20;
             this.btnRegistrar.Text = "Registrarse";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // label1
             // 
@@ -168,7 +174,7 @@
             this.dgInquilinos.Name = "dgInquilinos";
             this.dgInquilinos.RowHeadersWidth = 51;
             this.dgInquilinos.RowTemplate.Height = 24;
-            this.dgInquilinos.Size = new System.Drawing.Size(419, 383);
+            this.dgInquilinos.Size = new System.Drawing.Size(419, 333);
             this.dgInquilinos.TabIndex = 18;
             // 
             // dpFechaPago
@@ -225,7 +231,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 480);
+            this.ClientSize = new System.Drawing.Size(800, 420);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dpFechaFin);
             this.Controls.Add(this.lbMonto);

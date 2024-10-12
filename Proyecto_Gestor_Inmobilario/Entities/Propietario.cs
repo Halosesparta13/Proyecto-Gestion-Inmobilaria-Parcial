@@ -10,7 +10,6 @@ namespace Proyecto_Gestor_Inmobilario.Entities
     internal class Propietario
     {
         public Propietario() { }
-        public int Propietario_Id { get; set; }
         public string Nombre_Usuario { get; set; }
         public string Nombre_Completo { get; set; }
         public string DNI { get; set; }
