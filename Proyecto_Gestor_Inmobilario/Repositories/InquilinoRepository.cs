@@ -14,6 +14,7 @@ namespace Proyecto_Gestor_Inmobilario.Repositories
         //Existe
         public bool Existe(string codigo)
         {
+
             return inquilinos.Exists(i => i.DNI == codigo);
         }
         //Registrar

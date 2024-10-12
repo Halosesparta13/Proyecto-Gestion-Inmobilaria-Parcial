@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Gestor_Inmobilario.Entities
 {
-    internal class Inquilino
+    public class Inquilino
     {
         public string DNI { get; set; }
         public string Nombre_Completo { get; set; }
