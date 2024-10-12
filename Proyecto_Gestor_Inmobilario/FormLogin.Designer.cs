@@ -71,7 +71,7 @@
             // 
             this.btnIniciarSeccion.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnIniciarSeccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnIniciarSeccion.Location = new System.Drawing.Point(432, 271);
+            this.btnIniciarSeccion.Location = new System.Drawing.Point(429, 282);
             this.btnIniciarSeccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIniciarSeccion.Name = "btnIniciarSeccion";
             this.btnIniciarSeccion.Size = new System.Drawing.Size(121, 34);
@@ -84,7 +84,7 @@
             // 
             this.btnRegistrar.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegistrar.Location = new System.Drawing.Point(432, 313);
+            this.btnRegistrar.Location = new System.Drawing.Point(429, 324);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(121, 34);
@@ -97,7 +97,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(432, 353);
+            this.btnSalir.Location = new System.Drawing.Point(429, 364);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(121, 34);
